@@ -1,10 +1,63 @@
 # autolab
 
-An autonomous software laboratory built on [Claude Code](https://docs.anthropic.com/en/docs/claude-code).
+An autonomous experiment laboratory that uses [Claude Code](https://docs.anthropic.com/en/docs/claude-code) as its runtime.
 
-> Inspired by [Karpathy's autoresearch](https://github.com/karpathy/autoresearch) — which proved an AI agent can run hundreds of experiments overnight and find real improvements. We asked: **what if we applied the same loop not just to ML training, but to building entire projects from scratch?**
+## Why This Exists
+
+[Karpathy's autoresearch](https://github.com/karpathy/autoresearch) proved something powerful: give an AI agent a training script, a metric, and a loop — and it will run hundreds of experiments overnight, finding real improvements autonomously. The setup is elegant: one frozen evaluator (`prepare.py`), one editable file (`train.py`), one set of instructions (`program.md`). The agent modifies, measures, keeps or discards, and repeats.
+
+I wanted to test a hypothesis: **does this pattern work beyond ML training?** Can the same loop — frozen evaluator, one editable file, measure and iterate — discover novel molecules? Design materials? Write compression algorithms? Optimize prompts?
+
+The answer is yes. And the reason it works is more interesting than the results themselves.
+
+## Cognitive Evolutionary Learning
+
+Classical optimization (genetic algorithms, random search, Bayesian optimization) explores a search space by sampling — thousands of attempts, guided by statistics. Reinforcement learning trains a policy network across thousands of episodes using gradient descent. Both need many iterations because the agent has no *understanding* of the problem.
+
+autolab is different. The "agent" is an LLM — a reasoning engine. It doesn't sample randomly. It reads the results of previous experiments, **understands why something worked or failed**, formulates a hypothesis, and makes a targeted change. This is why it reaches strong results in 10-30 iterations where classical methods would need thousands.
+
+Think of it as a reinforcement learning environment where the policy isn't a neural network trained with gradients — it's a foundation model that learns within context through reasoning.
+
+| RL Concept | OpenAI Gym | autolab |
+|---|---|---|
+| **Agent** | Neural network (PPO, DQN) | Claude (LLM reasoning) |
+| **Environment** | `env.step(action)` | `python prepare.py evaluate` |
+| **Action space** | Discrete/continuous vectors | Modifications to `<editable>.py` |
+| **Observation** | State tensor | `results.tsv` + current code |
+| **Reward** | Scalar signal | `composite_score` |
+| **Policy** | Learned via gradients (thousands of episodes) | Pre-trained reasoning (10-30 iterations) |
+| **Create env** | `gym.make("CartPole-v1")` | `/experiment "protein-folding" "..."` |
+
+The key insight: the agent's "policy" was pre-trained on the entirety of human knowledge. It doesn't need to learn chemistry from scratch to optimize molecules — it already knows chemistry. What it needs is a **structured environment** that gives it honest feedback and prevents it from cheating. That's what `prepare.py` (frozen evaluator) and `METRICS.md` (frozen success criteria) provide.
+
+Example from nootropic-discovery (12 iterations, 55 molecules → composite 0.9864):
+```
+Exp 3:  "Indole + pyrrolidone = dual pharmacophore → 0.944"
+        → Claude UNDERSTANDS that combining motifs increases pharm score
+Exp 8:  "If 2 pharmacophores work, what about 3?"
+        → Adds piperidine → pharm=1.0
+Exp 9:  "pharm=1.0 but MPO=0.917... HBD=2 is the bottleneck"
+        → N-methylates piperidine → HBD=1 → MPO=1.0
+Exp 10: "Everything at 1.0 except QED... rotatable bonds?"
+        → Removes CH2 linker → QED boost → 0.9864
+```
+
+Each step is causal reasoning, not random sampling. The agent identifies which variable limits the score, hypothesizes why, and proposes a targeted change.
+
+## Claude Code as Runtime
+
+autolab is not a framework or library. It's a set of markdown files that tell Claude Code how to behave autonomously. There is no custom runtime, no orchestration layer, no dependencies beyond Claude Code and Python.
+
+- **CLAUDE.md** — The constitution. Defines the loop and the rules.
+- **`program.md`** — Each experiment's domain-specific instructions and strategy.
+- **Hooks** — SessionStart injects lab state so the agent can resume after interruptions.
+- **Git** — Every iteration is a commit. Every revert is safe. The safety net is version control.
+
+What other systems solve with LangChain, CrewAI, or custom orchestrators, autolab solves with markdown instructions and a frozen Python evaluator. The entire "framework" is text files that a reasoning agent reads and follows.
 
 ## Results
+
+All results are open source, reproducible, and verifiable. Raw data in each `experiments/*/results.tsv`.
 
 ### Antibiotic Discovery — 10 Novel Candidates Against Gram-Negative Bacteria
 
@@ -95,8 +148,7 @@ Experiments: 30 (10 first run + 20 extended)
 | 20 | **Replaced furan with benzene** | **0.947** | **Not found** | Simplifying the scaffold improved QED |
 | 21 | **Prolinol-benzoyl** | **0.9477** | **Not found (3)** | Phenyl + fluorobenzoyl isomers |
 | 24 | **gamma-Lactam scaffold** | **0.9478** | **Not found (2)** | Internal C=O creates new ring system |
-| 29 | **★★★ Thienyl Lactam** | **0.9484** | **Not found (3)** | Sulfur atom was the final breakthrough |
-| 9-10 | Divergent scaffolds | 0.9461 | Mixed | Morpholino-isoxazole family — new direction |
+| 29 | **Thienyl Lactam** | **0.9484** | **Not found (3)** | Sulfur atom was the final breakthrough |
 
 **Best molecule:** `O=C(O)C1CC(c2ccsc2)C(=O)N1c1ccc(F)cc1`
 - 4-(thiophen-3-yl)-1-(4-fluorophenyl)-5-oxopyrrolidine-3-carboxylic acid (Thienyl gamma-Lactam)
@@ -160,117 +212,14 @@ Materials evaluated: 10 compositions across perovskite, spinel, and ternary stru
 | Exp | Material | Band Gap | Score | Application |
 |-----|----------|----------|-------|-------------|
 | 1 | BaTiO3 (baseline) | 3.69 eV | 0.706 | Too wide for solar |
-| 3 | CaZrSe3 | 1.46 eV | 0.891 | ☀️ Solar cell candidate |
-| 4 | Fe2SnO4 (spinel) | 1.42 eV | 0.933 | ☀️ Solar + catalyst |
-| **6** | **CuSnO3** | **1.44 eV** | **0.999** | ☀️ Solar + catalyst + superconductor |
-| 8 | Cu2SnGeO6 (quaternary) | 1.52 eV | 0.992 | ☀️ 4-element novel composition |
+| 3 | CaZrSe3 | 1.46 eV | 0.891 | Solar cell candidate |
+| 4 | Fe2SnO4 (spinel) | 1.42 eV | 0.933 | Solar + catalyst |
+| **6** | **CuSnO3** | **1.44 eV** | **0.999** | Solar + catalyst + superconductor |
+| 8 | Cu2SnGeO6 (quaternary) | 1.52 eV | 0.992 | 4-element novel composition |
 
 **Key discovery:** Claude independently identified CaZrSe3 as a promising solar cell material — the [same material currently being published in peer-reviewed journals](https://link.springer.com/article/10.1007/s10825-024-02245-7) as a next-generation photovoltaic candidate with 32.4% theoretical efficiency. It also converged on copper-based perovskites (CuSnO3, CuGeO3, CuWO3) as optimal for the 1.4 eV solar band gap.
 
 > **Honesty note:** The scoring function uses empirical estimates, not full DFT calculations. These are computational predictions that would need experimental validation. CuSnO3 has been [studied via DFT](https://www.sciencedirect.com/science/article/abs/pii/S0022459622007757) — Claude reached the same conclusion as published research. The quaternary Cu2SnGeO6 may be genuinely novel.
-
-### Artificial Life (Lenia) — Evolving Digital Creatures
-
-Claude Code searched for rules in a continuous cellular automaton that produce emergent life-like behavior. **10 experiments, baseline dies immediately, no biology knowledge provided.**
-
-```
-Baseline:  Orbium parameters (composite 0.024 — dies instantly)
-Final:     Multi-blob sigma=0.04 (composite 0.670 — survives, oscillates, self-organizes)
-From death to life in 10 experiments.
-```
-
-| Exp | What Claude tried | Composite | Key behavior |
-|-----|------------------|-----------|-------------|
-| 1 | Orbium baseline | 0.024 | Dies immediately |
-| **2** | **Wider sigma (0.03)** | **0.660** | **Survives! Oscillates! Structures!** |
-| 3 | Ring kernel + ring init | 0.575 | Lost oscillation |
-| 4 | 3-shell kernel + multi-blob | 0.620 | Best movement so far |
-| 7 | Multi-blob + best sigma | 0.668 | High oscillation (0.77) |
-| **8** | **Multi-blob + sigma=0.04** | **0.670** | **Best: alive, stable, oscillating** |
-
-**What emerged:** From experiment 2 onward, the simulation produces stable, oscillating, self-organized structures — patterns that survive for 500+ steps, maintain structural integrity, and exhibit periodic behavior. 4 GIFs rendered showing the evolution from death to complex life.
-
-**Phase transition discovery:** The agent found that sigma=0.015 → death, sigma=0.03 → life. A tiny parameter change crosses the boundary between "nothing happens" and "complex behavior emerges." This mirrors real physics where phase transitions happen at critical thresholds.
-
-GIFs in `experiments/artificial-life/renders/`.
-
-### nanoGPT Optimization (Karpathy Loop)
-
-Claude Code autonomously optimized a GPT language model on an RTX 4050 laptop GPU. **10 experiments, ~1 hour, zero human intervention.**
-
-```
-Baseline val_loss:  1.6867
-Final val_loss:     1.4534  (-13.8%)
-Improvements found: 4 of 10 experiments
-```
-
-| # | Experiment | val_loss | Status |
-|---|-----------|----------|--------|
-| 0 | Baseline (6L/384E/6H, 10.8M params) | 1.6867 | baseline |
-| 1 | AMP mixed precision training | 1.5155 | **improved** |
-| 2 | LR 6e-4 + cosine schedule | 1.4674 | **improved** |
-| 3 | 8 layers + dropout 0.1 | 1.4767 | reverted |
-| 4 | Gradient accumulation 4x | 1.4699 | reverted |
-| 5 | Dropout 0.1 (less regularization) | 1.4826 | reverted |
-| 6 | Batch size 96 | 1.4722 | reverted |
-| 7 | LR 1e-3 | 1.4576 | **improved** |
-| 8 | Weight decay 0.2 | 1.4534 | **improved** |
-| 9 | Dropout 0.3 | 1.4632 | reverted |
-| 10 | RMSNorm | 1.4563 | reverted |
-
-**Key discovery:** With a fixed 5-minute training budget, throughput beats capacity. Everything that made training faster (AMP, higher LR) improved results. Everything that made the model bigger or slower (more layers, larger batches) made results worse. The agent learned this pattern autonomously.
-
-### Compression — 4% Away from Beating gzip
-
-Claude Code wrote a data compressor from scratch in pure Python and iteratively optimized it. **10 experiments, starting from basic RLE, targeting gzip-level compression.**
-
-```
-Baseline:  RLE (ratio 1.85 — EXPANDS data)
-Final:     LZ77 + Dual Huffman + 512K hash table (ratio 0.238)
-gzip:      ratio 0.229
-Gap:       Only 4% away from gzip — a C algorithm optimized over 30 years
-```
-
-| Exp | Algorithm | Ratio | vs gzip | Key change |
-|-----|----------|-------|---------|-----------|
-| 0 | RLE baseline | 1.847 | -706% 💀 | Run-length encoding expands text |
-| 1 | LZ77 hash chain | 0.319 | -39% | First real compression |
-| 2 | LZ77 + Huffman | 0.278 | -21% | Entropy coding added |
-| 5 | Dual Huffman + deflate codes | 0.245 | -6.7% | Distance codes like real deflate |
-| **8** | **4-byte hash + 512K table** | **0.238** | **-4.0%** | **Best composite — near gzip** |
-| 10 | Ultra-fast dict lookup | 0.262 | -14% | Speed up but ratio regressed |
-
-**What's remarkable:** In 10 iterations, Claude went from an algorithm that makes files bigger to one that compresses within 4% of gzip. It independently reinvented LZ77, Huffman coding, and deflate-style distance codes — the same techniques that took decades of human research. All in pure Python, ~300 lines.
-
-> **Honesty note:** The 4% gap is partly because gzip is compiled C (21 MB/s) while this is interpreted Python (0.5 MB/s). In compression ratio alone, the gap is even smaller. Speed is the real bottleneck.
-
-### Fertilizer Design — Novel Slow-Release Nitrogen Carriers
-
-Claude Code designed **20+ novel molecules** for slow-release nitrogen fertilizers that beat the commercial standard (IBDU). **15 experiments, 60+ molecules evaluated, 7 confirmed not in PubChem.**
-
-```
-Baseline:  IBDU (composite 0.673 — commercial slow-release fertilizer)
-Final:     Spiro-diguanidine-biuret (composite 0.7964)
-Improvement: +18.4% over commercial standard
-Novel molecules: 20+ (7 verified not in PubChem)
-```
-
-| Exp | What Claude tried | Composite | Key insight |
-|-----|------------------|-----------|-------------|
-| 1-3 | Baselines + urea derivatives | 0.648 | Triuret slightly better than biuret |
-| 4 | **Cyclohexyl biuret** | **0.699** | LogP 0-3 sweet spot for slow-release |
-| 5-6 | Triuret + cycloalkyl rings | 0.765 | Longer chains + bigger rings = better |
-| 7-8 | Tetrauret + cycloheptyl | 0.779 | Both bonus thresholds triggered |
-| 9-10 | Guanidine hybrids | 0.793 | Guanidine more N-efficient than urea |
-| **11** | **Spiro[cyclopropane-cyclohexyl]** | **0.7964** | **2 rings, MW<300, biodeg 0.95** |
-| 12-15 | Plateau exploration | 0.791 | Bicyclics, heterocycles, thioureas — no improvement |
-
-**Best molecule:** `NC(=N)NC(=N)NC(=O)NC(=O)NC1CCC2(CC2)CC1`
-- Spiro[cyclopropane-cyclohexyl] diguanidine-biuret
-- N%: 33.2 | SlowRelease: 0.784 | Biodeg: 0.95 | SA: 3.26
-- Not found in PubChem
-
-**Key discovery:** The winning strategy combined three independent insights: (1) diguanidine backbone for N-efficiency, (2) biuret linkage for slow-release, (3) spiro-cycloalkyl cap for hydrophobicity without exceeding MW 300. Claude learned each insight in separate experiments and combined them in experiment 11.
 
 ### Nootropic Discovery — Novel CNS Penetrant with Triple Pharmacophore
 
@@ -331,6 +280,107 @@ cat results.tsv
 All raw data in `experiments/nootropic-discovery/results.tsv`.
 </details>
 
+### Artificial Life (Lenia) — Evolving Digital Creatures
+
+Claude Code searched for rules in a continuous cellular automaton that produce emergent life-like behavior. **10 experiments, baseline dies immediately, no biology knowledge provided.**
+
+```
+Baseline:  Orbium parameters (composite 0.024 — dies instantly)
+Final:     Multi-blob sigma=0.04 (composite 0.670 — survives, oscillates, self-organizes)
+From death to life in 10 experiments.
+```
+
+| Exp | What Claude tried | Composite | Key behavior |
+|-----|------------------|-----------|-------------|
+| 1 | Orbium baseline | 0.024 | Dies immediately |
+| **2** | **Wider sigma (0.03)** | **0.660** | **Survives! Oscillates! Structures!** |
+| 3 | Ring kernel + ring init | 0.575 | Lost oscillation |
+| 4 | 3-shell kernel + multi-blob | 0.620 | Best movement so far |
+| 7 | Multi-blob + best sigma | 0.668 | High oscillation (0.77) |
+| **8** | **Multi-blob + sigma=0.04** | **0.670** | **Best: alive, stable, oscillating** |
+
+**Phase transition discovery:** The agent found that sigma=0.015 → death, sigma=0.03 → life. A tiny parameter change crosses the boundary between "nothing happens" and "complex behavior emerges." This mirrors real physics where phase transitions happen at critical thresholds.
+
+GIFs in `experiments/artificial-life/renders/`.
+
+### nanoGPT Optimization
+
+Claude Code autonomously optimized a GPT language model on an RTX 4050 laptop GPU. **10 experiments, ~1 hour, zero human intervention.**
+
+```
+Baseline val_loss:  1.6867
+Final val_loss:     1.4534  (-13.8%)
+Improvements found: 4 of 10 experiments
+```
+
+| # | Experiment | val_loss | Status |
+|---|-----------|----------|--------|
+| 0 | Baseline (6L/384E/6H, 10.8M params) | 1.6867 | baseline |
+| 1 | AMP mixed precision training | 1.5155 | **improved** |
+| 2 | LR 6e-4 + cosine schedule | 1.4674 | **improved** |
+| 3 | 8 layers + dropout 0.1 | 1.4767 | reverted |
+| 4 | Gradient accumulation 4x | 1.4699 | reverted |
+| 5 | Dropout 0.1 (less regularization) | 1.4826 | reverted |
+| 6 | Batch size 96 | 1.4722 | reverted |
+| 7 | LR 1e-3 | 1.4576 | **improved** |
+| 8 | Weight decay 0.2 | 1.4534 | **improved** |
+| 9 | Dropout 0.3 | 1.4632 | reverted |
+| 10 | RMSNorm | 1.4563 | reverted |
+
+**Key discovery:** With a fixed 5-minute training budget, throughput beats capacity. Everything that made training faster (AMP, higher LR) improved results. Everything that made the model bigger or slower (more layers, larger batches) made results worse. The agent learned this pattern autonomously.
+
+### Compression — 4% Away from Beating gzip
+
+Claude Code wrote a data compressor from scratch in pure Python and iteratively optimized it. **10 experiments, starting from basic RLE, targeting gzip-level compression.**
+
+```
+Baseline:  RLE (ratio 1.85 — EXPANDS data)
+Final:     LZ77 + Dual Huffman + 512K hash table (ratio 0.238)
+gzip:      ratio 0.229
+Gap:       Only 4% away from gzip — a C algorithm optimized over 30 years
+```
+
+| Exp | Algorithm | Ratio | vs gzip | Key change |
+|-----|----------|-------|---------|-----------|
+| 0 | RLE baseline | 1.847 | -706% | Run-length encoding expands text |
+| 1 | LZ77 hash chain | 0.319 | -39% | First real compression |
+| 2 | LZ77 + Huffman | 0.278 | -21% | Entropy coding added |
+| 5 | Dual Huffman + deflate codes | 0.245 | -6.7% | Distance codes like real deflate |
+| **8** | **4-byte hash + 512K table** | **0.238** | **-4.0%** | **Best composite — near gzip** |
+| 10 | Ultra-fast dict lookup | 0.262 | -14% | Speed up but ratio regressed |
+
+**What's remarkable:** In 10 iterations, Claude went from an algorithm that makes files bigger to one that compresses within 4% of gzip. It independently reinvented LZ77, Huffman coding, and deflate-style distance codes — the same techniques that took decades of human research. All in pure Python, ~300 lines.
+
+> **Honesty note:** The 4% gap is partly because gzip is compiled C (21 MB/s) while this is interpreted Python (0.5 MB/s). In compression ratio alone, the gap is even smaller. Speed is the real bottleneck.
+
+### Fertilizer Design — Novel Slow-Release Nitrogen Carriers
+
+Claude Code designed **20+ novel molecules** for slow-release nitrogen fertilizers that beat the commercial standard (IBDU). **15 experiments, 60+ molecules evaluated, 7 confirmed not in PubChem.**
+
+```
+Baseline:  IBDU (composite 0.673 — commercial slow-release fertilizer)
+Final:     Spiro-diguanidine-biuret (composite 0.7964)
+Improvement: +18.4% over commercial standard
+Novel molecules: 20+ (7 verified not in PubChem)
+```
+
+| Exp | What Claude tried | Composite | Key insight |
+|-----|------------------|-----------|-------------|
+| 1-3 | Baselines + urea derivatives | 0.648 | Triuret slightly better than biuret |
+| 4 | **Cyclohexyl biuret** | **0.699** | LogP 0-3 sweet spot for slow-release |
+| 5-6 | Triuret + cycloalkyl rings | 0.765 | Longer chains + bigger rings = better |
+| 7-8 | Tetrauret + cycloheptyl | 0.779 | Both bonus thresholds triggered |
+| 9-10 | Guanidine hybrids | 0.793 | Guanidine more N-efficient than urea |
+| **11** | **Spiro[cyclopropane-cyclohexyl]** | **0.7964** | **2 rings, MW<300, biodeg 0.95** |
+| 12-15 | Plateau exploration | 0.791 | Bicyclics, heterocycles, thioureas — no improvement |
+
+**Best molecule:** `NC(=N)NC(=N)NC(=O)NC(=O)NC1CCC2(CC2)CC1`
+- Spiro[cyclopropane-cyclohexyl] diguanidine-biuret
+- N%: 33.2 | SlowRelease: 0.784 | Biodeg: 0.95 | SA: 3.26
+- Not found in PubChem
+
+**Key discovery:** The winning strategy combined three independent insights: (1) diguanidine backbone for N-efficiency, (2) biuret linkage for slow-release, (3) spiro-cycloalkyl cap for hydrophobicity without exceeding MW 300. Claude learned each insight in separate experiments and combined them in experiment 11.
+
 ### Prompt Optimizer — 61% to 80.5% on HumanEval with Haiku
 
 Claude Code optimized a system prompt to maximize **claude-haiku-4-5** (the cheapest Claude model, $0.25/M tokens) on HumanEval — 164 Python coding problems. The metric is **pass@1**: percentage of problems solved correctly on the first attempt.
@@ -346,23 +396,77 @@ Cost per full eval: ~$0.15
 
 **Best prompt:** `"You are a senior Python engineer who writes production-quality, bug-free code. Think about edge cases first, then return ONLY the function body code, nothing else. Match the docstring examples exactly."`
 
-## What autolab Does
+## How It Works
 
-autolab runs the Karpathy Loop on anything with a measurable metric:
+### The Karpathy Loop
 
-1. **Create** an experiment with `/experiment <name> <description>`
-2. **Run** the loop: read `program.md`, iterate on the editable file
-3. **Measure** with the frozen evaluator (`prepare.py`)
-4. **Keep or revert** based on the score
-5. **Repeat** until plateau or target met
+Every experiment follows the same cycle:
 
-Every attempt is logged. Every failure is documented. Every result is in `results.tsv`.
+```
+┌─────────────────────────────────────────────────┐
+│              THE KARPATHY LOOP                   │
+│                                                  │
+│  1. READ        → Current best from editable.py  │
+│       ↓                                          │
+│  2. HYPOTHESIZE → What change improves the score? │
+│       ↓                                          │
+│  3. MODIFY      → Edit the ONE editable file     │
+│       ↓                                          │
+│  4. EVALUATE    → python prepare.py evaluate      │
+│       ↓                                          │
+│  5. DECIDE      → Better? Keep. Worse? Revert.   │
+│       ↓                                          │
+│  6. LOG         → Append to results.tsv           │
+│       ↓                                          │
+│  7. REPEAT      → Until exit condition met        │
+│       └──────────────────────────────────┘       │
+└─────────────────────────────────────────────────┘
+```
+
+### The Experiment as Environment
+
+Every experiment is a self-contained environment. Each file has a specific role:
+
+```
+experiments/<name>/
+├── prepare.py      # THE ENVIRONMENT — frozen, defines the reward function
+├── <editable>.py   # THE ACTION SPACE — the only file the agent modifies
+├── program.md      # THE POLICY GUIDE — instructions, strategy, exit conditions
+├── METRICS.md      # THE CONTRACT — frozen success criteria, can't move goalposts
+├── results.tsv     # THE MEMORY — append-only log of every attempt
+├── renders/        # THE EVIDENCE — visual outputs (optional)
+└── data/           # THE WORLD — test data the environment uses (optional)
+```
+
+**`prepare.py` — The Environment (frozen).** The equivalent of `env.step()` in Gym. Defines what "good" means and returns a numerical reward. The agent cannot modify it — this prevents cheating by redefining success. Commands: `evaluate`, `baseline`, `novelty`.
+
+**`<editable>.py` — The Action Space.** The only file the agent modifies. What it looks like depends on the domain: `molecule.py` (SMILES strings), `train.py` (model architecture), `compressor.py` (algorithms), `rules.py` (parameters), `prompts.py` (system prompts).
+
+**`program.md` — The Policy Guide.** Domain-specific instructions that shape how the agent explores. The equivalent of reward shaping in RL — it doesn't change what success means, but guides the agent toward productive exploration. Contains the loop steps, exit conditions, phase-based strategy, and domain tips.
+
+**`METRICS.md` — The Contract.** Frozen at experiment creation. The guarantee that goalposts don't move mid-experiment.
+
+**`results.tsv` — The Memory.** Append-only log of every attempt, including failures. Unlike RL replay buffers, the agent doesn't just see (state, action, reward) tuples — it reads descriptions and reasons about patterns.
+
+### Current Environments
+
+| Experiment | Editable File | Frozen Evaluator | Best Score |
+|-----------|--------------|-----------------|-----------|
+| antibiotic-discovery | `molecule.py` | antibacterial + gram-neg + novelty vs 45 known antibiotics | 0.9396 |
+| drug-discovery | `molecule.py` | QED + Lipinski + PAINS + novelty check | 1.0 |
+| nootropic-discovery | `molecule.py` | BBB + CNS MPO + cognitive pharmacophore | 0.9864 |
+| materials-discovery | `material.py` | Band gap + stability + applications | 0.999 |
+| fertilizer-design | `molecule.py` | N% + slow-release + biodeg + cost | 0.7964 |
+| artificial-life | `rules.py` | Survival + complexity + oscillation | 0.6698 |
+| compression | `compressor.py` | Ratio + speed + losslessness | 0.6818 |
+| nanoGPT | `train.py` | Validation loss | 1.4534 |
+| prompt-optimizer | `prompts.py` | pass@1 on HumanEval (164 problems) | 0.8049 |
 
 ## Quick Start
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/autolab
-cd autolab
+git clone https://github.com/hugoguerrap/AutoLab-Public
+cd AutoLab-Public
 
 # Open with Claude Code
 claude
@@ -400,131 +504,6 @@ Each experiment has a `program.md` with the loop instructions. Just tell Claude 
 
 ### Create a New Experiment
 
-```bash
-> /experiment protein-folding "Optimize protein sequences for stability using ESMFold"
-```
-
-**Requirements:** [Claude Code](https://docs.anthropic.com/en/docs/claude-code) with an API key. Python 3.10+. Each experiment lists its specific dependencies.
-
-## The Karpathy Loop
-
-```
-┌─────────────────────────────────────────────────┐
-│              THE KARPATHY LOOP                   │
-│                                                  │
-│  1. READ        → Current best from editable.py  │
-│       ↓                                          │
-│  2. HYPOTHESIZE → What change improves the score? │
-│       ↓                                          │
-│  3. MODIFY      → Edit the ONE editable file     │
-│       ↓                                          │
-│  4. EVALUATE    → python prepare.py evaluate      │
-│       ↓                                          │
-│  5. DECIDE      → Better? Keep. Worse? Revert.   │
-│       ↓                                          │
-│  6. LOG         → Append to results.tsv           │
-│       ↓                                          │
-│  7. REPEAT      → Until exit condition met        │
-│       └──────────────────────────────────┘       │
-└─────────────────────────────────────────────────┘
-```
-
-## How It Works — Cognitive Evolutionary Learning
-
-autolab is a **reinforcement learning environment for reasoning agents**. Think of it as [OpenAI Gym](https://github.com/openai/gym), but instead of training neural network policies with gradient descent, the "agent" is an LLM that learns within context through reasoning.
-
-| RL Concept | OpenAI Gym | autolab |
-|---|---|---|
-| **Agent** | Neural network (PPO, DQN) | Claude (LLM reasoning) |
-| **Environment** | `env.step(action)` | `python prepare.py evaluate` |
-| **Action space** | Discrete/continuous vectors | Modifications to `<editable>.py` |
-| **Observation** | State tensor | `results.tsv` + current code |
-| **Reward** | Scalar signal | `composite_score` |
-| **Policy** | Learned via gradients (thousands of episodes) | Pre-trained reasoning (10-30 iterations) |
-| **Create env** | `gym.make("CartPole-v1")` | `/experiment "protein-folding" "..."` |
-
-The key difference: in classical RL, the policy learns by updating weights across thousands of episodes. In autolab, the policy is a foundation model that **reasons about results** — it reads what worked, understands *why*, formulates hypotheses, and makes informed decisions. No gradient updates between iterations, just cognitive adaptation in context.
-
-This is why autolab achieves results in 10-30 iterations where classical optimization would need thousands: the agent doesn't randomly sample the search space — it **reasons about the structure of the problem**.
-
-Example from nootropic-discovery (12 iterations, 55 molecules → composite 0.9864):
-```
-Exp 3:  "Indole + pyrrolidone = dual pharmacophore → 0.944"
-        → Claude UNDERSTANDS that combining motifs increases pharm score
-Exp 8:  "If 2 pharmacophores work, what about 3?"
-        → Adds piperidine → pharm=1.0
-Exp 9:  "pharm=1.0 but MPO=0.917... HBD=2 is the bottleneck"
-        → N-methylates piperidine → HBD=1 → MPO=1.0
-Exp 10: "Everything at 1.0 except QED... rotatable bonds?"
-        → Removes CH2 linker → QED boost → 0.9864
-```
-
-Each step is **causal reasoning**, not random sampling. The agent identifies which variable limits the score, hypothesizes why, and proposes a targeted change.
-
-### The Experiment as Environment
-
-Every experiment is a self-contained environment with 5 files. Each file has a specific role in the learning loop:
-
-```
-experiments/<name>/
-├── prepare.py      # THE ENVIRONMENT — frozen, defines the reward function
-├── <editable>.py   # THE ACTION SPACE — the only file the agent modifies
-├── program.md      # THE POLICY GUIDE — instructions, strategy, exit conditions
-├── METRICS.md      # THE CONTRACT — frozen success criteria, can't move goalposts
-├── results.tsv     # THE MEMORY — append-only log of every attempt
-├── renders/        # THE EVIDENCE — visual outputs (optional)
-└── data/           # THE WORLD — test data the environment uses (optional)
-```
-
-**`prepare.py` — The Environment (frozen)**
-
-This is the equivalent of `env.step()` in Gym. It defines what "good" means and returns a numerical reward. The agent **cannot modify it** — this is what prevents the agent from cheating by redefining success. It typically has three commands:
-- `evaluate <candidate>` — run the candidate against the metric, return composite score
-- `baseline` — show reference scores to beat (the "starting state")
-- `novelty <candidate>` — verify the result is genuinely new (optional)
-
-**`<editable>.py` — The Action Space**
-
-The **only file the agent modifies**. Contains the current best candidate and strategy notes. What it looks like depends on the domain:
-- `molecule.py` → SMILES strings (drug discovery, antibiotics, fertilizers, nootropics)
-- `train.py` → Model architecture + hyperparameters (nanoGPT)
-- `compressor.py` → Compression algorithm code (compression)
-- `rules.py` → Cellular automaton parameters (artificial life)
-- `prompts.py` → System prompt + few-shot examples (prompt optimization)
-
-**`program.md` — The Policy Guide**
-
-Domain-specific instructions that shape **how** the agent explores. This is the equivalent of reward shaping in RL — it doesn't change what success means, but it guides the agent toward productive exploration. Contains:
-- The optimization loop steps (read → hypothesize → modify → evaluate → decide)
-- Exit conditions (max experiments, plateau detection, target score)
-- Phase-based strategy (explore → combine → optimize)
-- Domain-specific tips (e.g., "primary amines help gram-negative penetration")
-- Scoring breakdown (what each sub-metric measures and its weight)
-
-**`METRICS.md` — The Contract**
-
-Frozen at experiment creation. Defines the composite score formula, what each sub-metric measures, and what the target is. The agent **cannot modify this** — it's the guarantee that goalposts don't move mid-experiment.
-
-**`results.tsv` — The Memory**
-
-Append-only log of **every attempt**, including failures. This is what gives the agent "experience" — it reads past results to understand what worked and what didn't. Unlike RL replay buffers, the agent doesn't just see (state, action, reward) tuples — it reads the descriptions and reasons about patterns.
-
-### Current Environments
-
-| Experiment | Editable File | Frozen Evaluator | Best Score |
-|-----------|--------------|-----------------|-----------|
-| antibiotic-discovery | `molecule.py` | antibacterial + gram-neg + novelty vs 45 known antibiotics | 0.9396 |
-| drug-discovery | `molecule.py` | QED + Lipinski + PAINS + novelty check | 1.0 |
-| fertilizer-design | `molecule.py` | N% + slow-release + biodeg + cost | 0.7964 |
-| nootropic-discovery | `molecule.py` | BBB + CNS MPO + cognitive pharmacophore | 0.9864 |
-| materials-discovery | `material.py` | Band gap + stability + applications | 0.999 |
-| artificial-life | `rules.py` | Survival + complexity + oscillation | 0.6698 |
-| compression | `compressor.py` | Ratio + speed + losslessness | 0.6818 |
-| nanoGPT | `train.py` | Validation loss | 1.4534 |
-| prompt-optimizer | `prompts.py` | pass@1 on HumanEval (164 problems) | 0.8049 |
-
-### Creating New Environments
-
 Any domain with a measurable metric can become an autolab experiment:
 
 ```bash
@@ -532,6 +511,8 @@ Any domain with a measurable metric can become an autolab experiment:
 ```
 
 This creates `prepare.py` (the evaluator), `sequence.py` (the editable), `program.md` (the strategy), and `METRICS.md` (the contract). The agent takes it from there.
+
+**Requirements:** [Claude Code](https://docs.anthropic.com/en/docs/claude-code) with an API key. Python 3.10+. Each experiment lists its specific dependencies.
 
 ## Safety Model
 
@@ -566,17 +547,6 @@ autolab/
     └── skills/
         └── create-experiment/   # /experiment — creates new environments
 ```
-
-## Under the Hood
-
-autolab is not a framework or library — it's a **set of instructions** (CLAUDE.md) that turn Claude Code into an autonomous research agent. The runtime is Claude Code itself. The "program" is markdown. The infrastructure is git.
-
-- **CLAUDE.md** — The constitution. Defines rules and conventions.
-- **`/experiment` skill** — Creates new environments (`prepare.py` + `<editable>.py` + `program.md`).
-- **Hooks** — SessionStart injects lab state for interruption-resilience; Stop evaluates if logging is needed.
-- **`program.md`** — Each experiment's domain-specific loop instructions and strategy.
-
-No custom runtime. No orchestration framework. No dependencies beyond Claude Code and Python. The entire system is Markdown, JSON, and Python files that tell an LLM how to do science.
 
 ## License
 
