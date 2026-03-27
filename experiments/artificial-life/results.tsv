@@ -1,0 +1,11 @@
+experiment	name	composite	survival	complexity	movement	stability	structure	oscillation	mu	sigma	radius	description
+1	orbium_baseline	0.0239	0.0	-0.0	0.1197	0.0	0.0	0.0	0.15	0.015	13	Orbium baseline — dies immediately
+2	wider_sigma	0.6597	1.0	0.4423	0.0116	0.9955	1.0	0.6955	0.15	0.03	13	Wider sigma=0.03 — survives! structure+oscillation
+3	ring_ring	0.5747	1.0	0.365	0.0214	0.9826	1.0	0.0	0.15	0.03	13	Ring kernel+ring init — lost oscillation
+4	multi_shell	0.6200	1.0	0.3018	0.0484	0.9958	1.0	0.5062	0.15	0.03	15	3-shell kernel+multi_blob — best movement so far
+5	random_blob	0.6551	1.0	0.4353	0.0142	0.9912	1.0	0.6652	0.14	0.025	13	Random blob — similar to exp2
+6	edge_stability	0.6279	1.0	0.4161	0.0067	0.9923	1.0	0.4446	0.12	0.02	13	Lower mu + higher dt — worse
+7	multi_blob_best	0.6684	1.0	0.4483	0.0100	0.9952	1.0	0.7741	0.15	0.03	13	Multi-blob + best sigma — NEW BEST, high oscillation
+8	multi_blob_04	0.6698	1.0	0.4583	0.0051	0.9952	1.0	0.7784	0.15	0.04	13	Multi-blob + sigma=0.04 — marginal improvement
+9	multi_blob_05	0.6488	1.0	0.4458	0.0135	0.9970	1.0	0.5742	0.15	0.05	13	Too wide sigma — oscillation dropped
+10	large_radius	0.6302	1.0	0.3962	0.0128	0.9951	1.0	0.4918	0.15	0.03	18	Large radius + slow dt — less complex

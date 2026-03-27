@@ -1,0 +1,39 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python \"$CLAUDE_PROJECT_DIR/.claude/hooks/session_start.py\"",
+            "timeout": 15
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python \"$CLAUDE_PROJECT_DIR/.claude/hooks/session_end.py\"",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "prompt",
+            "prompt": "Evaluate if this session produced results worth logging to the autolab journal. Check: 1) Was an experiment created or iterated? 2) Did metrics improve for any experiment? 3) Were new results logged to results.tsv? If YES: respond with specific UPDATE instructions, e.g. UPDATE lab/journal.md: [YYYY-MM-DD HH:MM:SS] EXPERIMENT | name | details. If nothing worth logging: respond with {\"decision\": \"skip\"}"
+          }
+        ]
+      }
+    ]
+  }
+}

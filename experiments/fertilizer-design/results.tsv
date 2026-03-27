@@ -1,0 +1,46 @@
+experiment	smiles	name	composite	n_pct	slow_release	biodeg	novel	description
+1	NC(N)=O	Urea (baseline)	0.6295	46.65	0.155	0.85	known	Baseline — fast dissolving
+1	NC(=O)NC(N)=O	Biuret	0.6406	40.77	0.275	0.95	known	Urea dimer, slightly slower
+1	NC(=O)NCCNC(N)=O	Ethylene diurea	0.6457	38.34	0.319	0.95	-	Two urea groups linked by ethylene
+1	NC(=O)NC(=O)NC(N)=O	Triuret	0.6483	38.35	0.339	0.95	-	Triple urea chain
+1	O=C1NC(=O)NC(=O)N1	Cyanuric acid triamide	0.5904	32.56	0.209	0.75	known	Ring structure, 3 urea-like groups
+2	NC(=O)NC(C)(C)C	tert-Butyl urea	0.6172	24.12	0.442	0.85	known	Hydrophobic urea, LogP +0.45
+2	NC(=O)NC(C)CC	sec-Butyl urea	0.6159	24.12	0.442	0.85	known	Branched alkyl urea
+2	NC(=O)NCCCNC(N)=O	Propylene diurea	0.6403	34.98	0.327	0.95	-	Propylene-linked diurea
+2	NC(=N)N	Guanidine	0.5752	71.14	0.04	0.85	known	Very high N%, too fast dissolving
+2	NC(=N)NC(=N)N	Biguanide	0.6128	69.26	0.163	0.85	known	Double guanidine
+2	NC(=N)NC(=O)N	Guanylurea	0.6398	54.88	0.294	0.85	known	Guanidine-urea hybrid
+3	O=C1NCNC1=O	Hydantoin	0.5618	27.99	0.153	0.85	known	5-membered ring urea
+3	O=C1NC(C)(C)C(=O)N1	5,5-Dimethylhydantoin	0.6119	21.86	0.419	0.95	known	Substituted hydantoin
+3	CC1NC(=O)NC1=O	5-Methylhydantoin	0.6317	24.55	0.411	0.95	known	Methyl hydantoin
+3	NC(=O)N1CCNC1=O	2-Ureido-imidazolidinone	0.6523	32.54	0.419	0.95	-	Ring with urea pendant
+3	O=C1NC2NC(=O)NC2N1	Glycoluril	0.6518	39.42	0.417	0.95	known	Bicyclic diurea
+4	NC(=O)NC1CCCCC1	Cyclohexylurea	0.6436	19.70	0.507	0.95	known	Ring urea, good slow-release
+4	NC(=O)NC(=O)NCC(C)C	N-Isobutyl biuret	0.6816	26.40	0.506	0.95	novel	FIRST to beat IBDU!
+4	NC(=O)NC(=O)NC1CCCCC1	N-Cyclohexyl biuret	0.6991	22.69	0.571	0.95	novel	Key breakthrough structure
+4	CCNC(=O)NC(=O)NCC	N,N'-Diethyl biuret	0.6818	26.40	0.506	0.95	novel	Symmetric alkyl biuret
+4	CC(C)NC(=O)NC(=O)NC(C)C	N,N'-Diisopropyl biuret	0.6855	22.44	0.522	0.95	novel	Bulkier symmetric biuret
+5	NC(=O)NC(=O)NC1CCCC1	N-Cyclopentyl biuret	0.6968	24.54	0.563	0.95	-	5-ring variant
+5	NC(=O)NC(=O)NC(C)(C)C	N-tert-Butyl biuret	0.6801	26.40	0.506	0.95	-	Branched alkyl biuret
+5	NC(=O)NC(=O)NC1CCCCCC1	N-Cycloheptyl biuret	0.7013	21.09	0.579	0.95	novel	7-ring, beats cyclohexyl
+5	CNC(=O)NC(=O)NC1CCCCC1	N-Me-N'-cyclohexyl biuret	0.7005	21.09	0.579	0.95	novel	Methylated variant
+6	NC(=O)NC(=O)NC(=O)NC1CCCCC1	N-Cyclohexyl triuret	0.7624	24.55	0.636	0.95	novel	Major hit — both bonuses
+6	NC(=O)NC(=O)NC(=O)NC1CCCCCC1	N-Cycloheptyl triuret	0.7647	23.13	0.644	0.95	novel	Even better with 7-ring
+6	NC(=O)NC(=O)NC(=O)NC1CCCC1	N-Cyclopentyl triuret	0.7601	26.15	0.628	0.95	novel	5-ring triuret
+7	NC(=O)NC(=O)NC(=O)NC(=O)NC1CCCCC1	N-Cyclohexyl tetrauret	0.7764	25.82	0.700	0.95	novel	Long urea chain + ring
+7	NC(=O)NC(=O)NC(=O)NC(=O)NC1CCCCCC1	N-Cycloheptyl tetrauret	0.7786	24.55	0.708	0.95	novel	Top tetrauret variant
+8	NC(=N)NC(=O)NC(=O)NC1CCCCC1	Guanidine-biuret-cyclohexyl	0.7784	30.82	0.655	0.95	novel	Guanidine adds N%
+8	NC(=N)NC(=N)NC(=O)NC1CCCCC1	Diguanidine-urea-cyclohexyl	0.7788	37.14	0.675	0.95	novel	Double guanidine + ring
+9	NC(=N)NC(=N)NC(=O)NC(=O)NC1CCCCCC1	Diguanidine-biuret-cycloheptyl	0.7916	34.61	0.727	0.95	novel	Top diguanidine variant
+9	NC(=N)NC(=N)NC(=O)NC(=O)NCC1CCCCCC1	Diguanidine-biuret-CH2cycloheptyl	0.7934	32.97	0.735	0.95	novel	Methylene spacer variant
+10	NC(=N)NC(=N)NC(=S)NC(=O)NC1CCCCCC1	Thio-diguanidine-cycloheptyl	0.7918	32.75	0.736	0.95	novel	Thiourea adds hydrophobicity
+10	NC(=N)NC(=N)NC(=O)NC(=O)N(C)C1CCCCCC1	N-Me diguanidine-biuret-cycloheptyl	0.7919	32.97	0.735	0.95	novel	N-methylated variant
+11	NC(=N)NC(=N)NC(=O)NC(=O)NC1CCC2(CC2)CC1	Spiro[cyclopropane-cyclohexyl] diguanidine-biuret	0.7964	33.20	0.784	0.95	novel	CHAMPION — 2-ring system
+11	NC(=N)NC(=N)NC(=O)NC(=O)NC1(C)CCCCCC1	1-Me-cycloheptyl diguanidine-biuret	0.7898	32.97	0.735	0.95	novel	Methylated cycloheptyl
+12	NC(=N)NC(=N)NC(=O)NC(=O)NC1CC2(CC2)CCC1	Spiro-cycloheptyl variant	0.7911	33.20	0.784	0.95	novel	Alt spiro position
+12	NC(=N)NC(=N)NC(=O)NC(=O)NC12CCC(CC1)CC2	Bridged bicyclic variant	0.7904	33.20	0.784	0.95	novel	Norbornane-like bridge
+13	NC(=N)NC(=N)NC(=O)NC(=O)NC1CCNCC1	Piperidyl diguanidine-biuret	0.6915	41.46	0.520	0.95	novel	N-heterocycle, too hydrophilic
+13	NC(=N)NC(=N)NC(=O)NC(=O)N1CCNCC1	Piperazyl diguanidine-biuret	0.7047	43.73	0.512	0.95	novel	Piperazine variant
+14	NC(=N)NC(=N)NC(=O)NC(=O)NC1CC2CCC1C2	Norbornyl diguanidine-biuret	0.7477	34.85	0.676	0.95	novel	Norbornane ring, low SA
+14	NC(=N)NC(=O)NC(=O)NC1CC2CCCCC2C1	Decalinyl guanidine-biuret	0.7706	26.20	0.728	0.95	novel	Fused bicyclic
+15	NC(=O)NC(=O)NC(=O)NC(=O)NC(=O)NC1CCCCCC1	N-Cycloheptyl pentauret	0.7356	26.74	0.645	0.85	novel	Too many ureas, biodeg drops

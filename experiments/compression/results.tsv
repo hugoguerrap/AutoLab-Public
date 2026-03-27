@@ -1,0 +1,12 @@
+experiment	avg_ratio	composite	speed_mbps	lossless	vs_gzip_pct	description
+0	1.8475	0.3153	7.67	True	-706.0	RLE baseline — expands text data
+1	0.3188	0.6414	0.39	True	-39.1	LZ77 hash chain, 32KB window — good ratio but slow
+2	0.2776	0.6623	0.56	True	-21.1	LZ77 + Huffman — ratio improved, still slow
+3	0.2722	0.6647	0.41	True	-18.8	LZ77+Huffman fixed — ratio 0.272, need better text/binary
+4	0.2841	0.6582	0.13	True	-24.0	Lazy matching regression — reverted approach
+5	0.2446	0.6787	0.48	True	-6.7	Dual Huffman + deflate distance codes — big ratio win
+6	0.2451	0.6785	0.54	True	-6.9	Full deflate-style length+distance codes — marginal
+7	0.2404	0.6803	0.24	True	-4.9	bytes.find() search — best ratio but slow
+8	0.2384	0.6818	0.51	True	-4.0	4-byte hash + 512K table — BEST composite
+9	0.2423	0.6797	0.41	True	-5.7	Hybrid hash+find() — no improvement
+10	0.2621	0.6711	1.07	True	-14.4	Ultra-fast dict lookup — speed up but ratio regressed

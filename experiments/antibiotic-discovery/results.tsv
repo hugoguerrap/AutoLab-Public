@@ -1,0 +1,234 @@
+experiment	smiles	name	composite	antibacterial	gram_neg	novelty	druglike	novel	description
+1	Nc1cc2c(N)ccnc2[nH]1	pyrazolopyridine-amine	0.8134	0.8	0.95	0.72	0.7574	novel	Phase1 diverse scaffold exploration
+1	Nc1ncn2ccnc2n1	imidazopyrimidine-amine	0.7526	0.8	0.75	0.7037	0.7692	novel	Phase1 diverse scaffold exploration
+1	Nc1ccc2nnn(N)c2n1	triazolopyridazine-amine	0.7877	0.8	0.85	0.82	0.7377	novel	Phase1 diverse scaffold exploration
+1	Nc1ccc2[nH]c(N)nc2c1	benzimidazole-amine	0.7569	0.8	0.95	0.652	0.7408	novel	Phase1 diverse scaffold exploration
+1	Nc1cc2ccc(N)cc2[nH]1	indazole-amine	0.8082	0.75	0.95	0.7503	0.746	novel	Phase1 diverse scaffold exploration
+1	Nc1ccc2nc(N)c(N)nc2c1	quinoxaline-diamine	0.7289	0.8	0.95	0.5584	0.7509	novel	Phase1 diverse scaffold exploration
+1	Nc1ccc2[nH]cc(N)c2n1	pyrrolopyridine-amine	0.8211	0.8	0.95	0.7618	0.7574	novel	Phase1 diverse scaffold exploration
+1	Nc1nc(N)c2cc(F)ccc2n1	pyrimidoamine-novel1	0.7588	0.8	0.95	0.5706	0.8143	novel	Phase1 diverse scaffold exploration
+1	Nc1nc(N)nc(Nc2ccccc2)n1	triazine-amine-rigid	0.7884	0.9	0.95	0.5745	0.8323	novel	Phase1 diverse scaffold exploration
+1	Nc1nnc(NC2CCNCC2)o1	oxadiazole-amine	0.8246	0.8	0.85	1.0	0.7944	novel	Phase1 BEST — perfect novelty
+2	Nc1nnc(NC2CC(C)NCC2)o1	oxadiaz-piperid-methyl	0.8368	0.8	0.95	1.0	0.8137	novel	Enlarged scaffold, MW still < 250
+2	Nc1nnc(NC2CCCCC2N)o1	oxadiaz-cyclohexylamine	0.8403	0.8	0.95	0.9999	0.8155	novel	Cyclohexyldiamine linker
+2	Nc1nnc(NC2CCN(CCN)CC2)o1	oxadiaz-aminoethyl-piperid	0.8481	0.9	0.85	0.9515	0.8171	novel	Aminoethyl on piperidine N
+2	Nc1nnc(NC2CCN(c3ccccc3)CC2)o1	oxadiaz-phenyl-piperid	0.911	1.0	0.95	0.7709	0.9367	novel	BEST — phenyl + piperidine hits MW sweet spot
+2	Nc1nnc(Nc2ccncc2N)o1	oxadiaz-pyridyl	0.8225	0.8	0.95	0.8246	0.8145	novel	Pyridyl variant
+2	Nc1nnc(NCc2ccc(N)cc2)o1	oxadiaz-aminobenzyl	0.7482	0.9	0.95	0.5601	0.6208	novel	Benzyl too similar to known
+2	Nc1ccc2[nH]cc(CN)c2n1	pyrrolopyrid-methylamine	0.818	0.8	0.95	0.7032	0.7871	novel	Methylamine substituent
+2	Nc1ccc2[nH]cc(CCN)c2n1	pyrrolopyrid-ethylamine	0.8253	0.8	0.95	0.722	0.814	novel	Ethylamine substituent
+2	Nc1ccc2[nH]cc(N3CCNCC3)c2n1	pyrrolopyrid-piperazine	0.7911	0.9	0.95	0.652	0.8262	novel	Piperazine too similar to quinolones
+2	Nc1nnc(Nc2cccc(N)n2)o1	oxadiaz-aminopyridine	0.8119	0.8	0.95	0.756	0.8145	novel	Aminopyridine variant
+2	NCc1ccc2nnn(N)c2n1	triazolopyridaz-aminomethyl	0.7626	0.7	0.75	0.9254	0.7634	novel	Low gram_neg
+2	Nc1ccc2nnn(C3CCNCC3)c2n1	triazolopyridaz-piperazine	0.8606	0.9	0.95	0.8573	0.8603	novel	Strong second-best scaffold
+3	Nc1nnc(NC2CCN(c3ccc(N)cc3)CC2)o1	oxadiaz-4aminophenyl-pip	0.803	1.0	0.95	0.6712	0.6622	novel	Amine on phenyl hurts druglikeness
+3	Nc1nnc(NC2CCN(c3cccc(N)c3)CC2)o1	oxadiaz-3aminophenyl-pip	0.8906	1.0	0.95	0.7266	0.8622	novel	3-aminophenyl variant
+3	Nc1nnc(NC2CCN(c3ccccc3N)CC2)o1	oxadiaz-2aminophenyl-pip	0.8994	1.0	0.95	0.7835	0.8622	novel	2-aminophenyl good novelty
+3	Nc1nnc(NC2CCN(c3ccc(F)cc3)CC2)o1	oxadiaz-4Fphenyl-pip	0.8494	1.0	0.95	0.6891	0.9456	novel	F boosts druglike but hurts novelty
+3	Nc1nnc(NC2CCN(c3cccc(F)c3)CC2)o1	oxadiaz-3Fphenyl-pip	0.9095	1.0	0.95	0.7618	0.9456	novel	Close to champion, 3-F better than 4-F
+3	Nc1nnc(NC2CCN(c3ccncc3)CC2)o1	oxadiaz-pyridyl-pip	0.9089	1.0	0.95	0.7863	0.9269	novel	Pyridine variant, great novelty
+3	Nc1nnc(NC2CCN(c3ncccn3)CC2)o1	oxadiaz-pyrimidyl-pip	0.9075	1.0	0.95	0.7969	0.9117	novel	Pyrimidine variant
+3	Nc1nnc(NC2CCN(c3ccccc3)C2)o1	oxadiaz-phenyl-pyrrolid	0.8748	0.9	0.95	0.7963	0.9245	novel	5-ring smaller, MW < 250
+3	Nc1nnc(NC2CCN(c3ccccc3)CCC2)o1	oxadiaz-phenyl-homopip	0.8914	1.0	0.85	0.794	0.9457	novel	7-ring, lower gram_neg
+3	Nc1nnc(NC2CC(C)CN(c3ccccc3)C2)o1	oxadiaz-phenyl-3Mepip	0.9083	1.0	0.95	0.8146	0.9449	novel	Best novelty of batch 0.815
+3	Nc1nnc(NC2CCN(c3nnc(N)o3)CC2)o1	dioxadiaz-phenyl	0.8847	1.0	0.85	0.9906	0.838	novel	Double oxadiazole, best novelty 0.99
+3	Nc1nnc(NC2CCN(c3ccccc3)CC2)s1	thiadiaz-phenyl-pip	0.8936	1.0	0.85	0.7628	0.9493	novel	Thiadiazole variant
+4	Nc1nnc(NC2CCN(c3cnccn3)CC2)o1	oxadiaz-pyrazine-pip	0.9246	1.0	0.95	0.9166	0.9117	novel	NEW CHAMPION — pyrazine boosts novelty
+4	Nc1nnc(NC2CCN(c3nccs3)CC2)o1	oxadiaz-thiazolyl-pip	0.9214	1.0	0.95	0.8819	0.9307	novel	Thiazolyl strong second
+4	Nc1nnc(NC2CCN(c3ncc[nH]3)CC2)o1	oxadiaz-imidazolyl-pip	0.8657	0.9	0.95	0.9166	0.8622	novel	MW < 250 hurts
+4	Nc1nnc(NC2CCN(c3nncn3N)CC2)o1	oxadiaz-triazolyl-pip	0.8758	1.0	0.85	0.9713	0.7993	novel	High novelty but gram_neg lower
+4	Nc1nnc(NC2CCN(c3ccc(OC)cc3)CC2)o1	oxadiaz-OCH3phenyl-pip	0.8903	1.0	0.95	0.8278	0.7428	novel	OMe lowers druglike
+4	Nc1nnc(NC2CCN(c3ccc(C#N)cc3)CC2)o1	oxadiaz-CNphenyl-pip	0.9093	1.0	0.95	0.7698	0.9408	novel	CN group close to champion
+4	CN(c1ccccc1)C1CCN(c2nnc(N)o2)CC1	oxadiaz-Nmethyl-phenyl	0.9046	1.0	0.85	0.8892	0.9592	novel	N-methyl good druglike
+4	Nc1nnc(NC2CCN(Cc3ccccc3)CC2)o1	oxadiaz-benzyl-pip	0.8477	1.0	0.95	0.6725	0.9414	novel	Benzyl too flexible
+4	Nc1nnc(NC2CC(C)CN(c3ccccc3)C2C)o1	oxadiaz-phenyl-35dMepip	0.8854	1.0	0.85	0.8251	0.9509	novel	Dimethyl piperidine
+4	Nc1nnc(NC2CC(C)CN(c3cccc(F)c3)C2)o1	oxadiaz-3Fphenyl-3Mepip	0.8917	1.0	0.85	0.8403	0.9507	novel	3F+3Me combo
+4	Nc1nnc(NC2CCN(c3ccc4ccccc4c3)CC2)o1	oxadiaz-naphthyl-pip	0.8918	1.0	0.85	0.8298	0.8871	novel	Naphthyl variant
+5	Nc1nnc(NC2CCN(c3cnc(N)cn3)CC2)o1	oxadiaz-aminopyrazine-pip	0.9029	1.0	0.95	0.9392	0.8568	novel	Aminopyrazine good novelty
+5	Nc1nnc(NC2CCN(c3cnc(C)cn3)CC2)o1	oxadiaz-Mepyrazine-pip	0.9149	1.0	0.95	0.8422	0.924	novel	Methylpyrazine
+5	Nc1nnc(NC2CCN(c3cnc(Cl)cn3)CC2)o1	oxadiaz-Clpyrazine-pip	0.9326	1.0	0.95	0.959	0.9345	novel	NEW CHAMPION — Cl boosts novelty
+5	Nc1nnc(NC2CC(C)CN(c3cnccn3)C2)o1	oxadiaz-pyrazine-3Mepip	0.9271	1.0	0.95	0.9901	0.9228	novel	Near-perfect novelty 0.99
+5	Nc1nnc(NC2CCN(c3cnccn3)CC2)s1	thiadiaz-pyrazine-pip	0.9255	1.0	0.95	0.89	0.9319	novel	Thiadiazole + pyrazine
+5	Nc1nn[nH]c1NC1CCN(c2cnccn2)CC1	triazole-pyrazine-pip	0.9053	1.0	0.95	0.9545	0.8629	novel	Triazole head
+5	Nc1nnc(NC2CC(C)CN(c3ncccn3)C2)o1	oxadiaz-pyrimid-3Mepip	0.9151	1.0	0.95	0.9043	0.9228	novel	Pyrimidine variant
+5	Nc1nnc(N2CCC(N3CCNCC3)CC2)o1	oxadiaz-pyrazine-4pip	0.8532	1.0	0.85	0.7237	0.8678	novel	Bis-piperidine lower
+5	Nc1nnc(NCCc2cnccn2)o1	oxadiaz-pyrazine-ethyl	0.8653	0.9	0.95	0.8916	0.8652	novel	Too small MW
+5	Nc1nnc(NC2CCN(c3cnc(F)cn3)CC2)o1	oxadiaz-Fpyrazine-pip	0.9129	1.0	0.95	0.8444	0.9218	novel	F-pyrazine
+5	Cc1nnc(NC2CCN(c3cnccn3)CC2)o1	Meoxadiaz-pyrazine-pip	0.8508	1.0	0.7	0.9463	0.9445	novel	Me on oxadiazole kills gram_neg
+5	Nc1nnc(NC2CCN(c3nc(N)cnc3N)CC2)o1	oxadiaz-diaminopyraz-pip	0.8712	1.0	0.85	0.9368	0.7951	novel	Diaminopyrazine
+6	Nc1nnc(NC2CC(C)CN(c3cnc(Cl)cn3)C2)o1	oxadiaz-Clpyraz-3Mepip	0.9292	1.0	0.95	0.9994	0.9383	novel	Combo Cl+3Me, near-perfect novelty
+6	Nc1nnc(NC2CCN(c3cnc(Br)cn3)CC2)o1	oxadiaz-Brpyrazine-pip	0.9316	1.0	0.95	0.959	0.9304	novel	Br close to champion
+6	Nc1nnc(NC2CCN(c3cnc(C(F)(F)F)cn3)CC2)o1	oxadiaz-CF3pyrazine-pip	0.9245	1.0	0.95	0.905	0.9367	novel	CF3 variant
+6	Nc1nnc(NC2CCN(c3cnc(Cl)cn3)CC2)s1	thiadiaz-Clpyraz-pip	0.9246	1.0	0.95	0.8833	0.9449	novel	Thiadiazole head
+6	Nc1nnc(NC2CC(F)CN(c3cnc(Cl)cn3)C2)o1	oxadiaz-Clpyraz-3Fpip	0.9266	1.0	0.95	1.0	0.934	novel	Perfect novelty 1.0
+6	Nc1nnc(NC2CCN(c3c(C)ncc(C)n3)CC2)o1	oxadiaz-diMepyrazine-pip	0.9202	1.0	0.95	0.8745	0.933	novel	Dimethyl pyrazine
+6	Nc1nnc(NC2CCN(c3cnc(CC)cn3)CC2)o1	oxadiaz-Etpyrazine-pip	0.9193	1.0	0.95	0.871	0.9305	novel	Ethyl pyrazine
+6	Nc1nnc(NC2CC(C)CN(c3cnc(Cl)cn3)C2C)o1	oxadiaz-Clpyraz-26dMepip	0.9226	1.0	0.95	0.9869	0.9402	novel	2,6-dimethyl pip
+6	Nc1nnc(NC2CCN(c3cnc(C4CC4)cn3)CC2)o1	oxadiaz-cPrpyrazine-pip	0.9244	1.0	0.95	0.9028	0.9363	novel	Cyclopropyl pyrazine
+6	Nc1nnc(NC2CCN(c3cnc(OC)cn3)CC2)o1	oxadiaz-OMepyrazine-pip	0.9203	1.0	0.95	0.8908	0.9158	novel	Methoxy pyrazine
+7	Nc1ccc2nnn(C3CCN(c4cnc(Cl)cn4)CC3)c2n1	triazolopyridaz-Clpyraz-pip	0.9024	1.0	0.85	0.9706	0.8815	novel	Lower gram_neg
+7	Nc1nc(NC2CCN(c3cnccn3)CC2)nc(N)n1	aminopyrimid-pyrazine	0.8624	1.0	0.85	0.7745	0.8539	novel	Pyrimidine head too familiar
+7	Nc1nnc(NC(=N)NC2CCN(c3cnccn3)CC2)o1	oxadiaz-guanid-pyrazine	0.8786	1.0	0.95	0.917	0.7282	novel	Guanidine linker hurts druglike
+7	Nc1[nH]c(NC2CCN(c3cnccn3)CC2)cn1	aminoimidaz-pyraz-pip	0.9197	1.0	0.95	0.9246	0.8782	novel	Aminoimidazole head
+7	Nc1nnc(NC2CC3CCC(N(c4cnccn4))C2C3)o1	oxadiaz-pyraz-tropane	0.9093	1.0	0.95	1.0	0.8892	novel	Tropane scaffold, perfect novelty
+7	Nc1nnc(NC2CCN(c3cnc(Cl)cn3)C2)o1	oxadiaz-Clpyraz-pyrrolid	0.9281	1.0	0.95	0.9776	0.9251	novel	Pyrrolidine close
+7	Nc1nnc(NC2CN(c3cnc(Cl)cn3)C2)o1	oxadiaz-Clpyraz-azetid	0.918	1.0	0.95	1.0	0.9114	novel	Azetidine perfect novelty
+7	Nc1nnc(NC2COCN(c3cnccn3)C2)o1	oxadiaz-pyraz-morpholine	0.8861	1.0	0.85	0.9945	0.8852	novel	Morpholine lower gram_neg
+7	Nc1nnc(NC2CCN(c3cnc(-c4nccs4)cn3)CC2)o1	oxadiaz-pyrazthiaz-pip	0.9151	1.0	0.95	0.9171	0.8638	novel	Thiazole on pyrazine
+7	Nc1nnc(NC2(CCN(c3cnccn3)CC2)c2ccccc2)o1	oxadiaz-spiro-pyrazine	0.8876	1.0	0.85	0.8568	0.8724	novel	Spirocyclic
+7	Nc1nnc(N2CCc3nccnc3C2)o1	oxadiaz-pyrazpip-fused	0.8474	0.9	0.85	0.9719	0.8598	novel	Fused ring too small
+8	Nc1nnc(NC2CC(F)CN(c3cnc(Cl)cn3)CC2)o1	oxadiaz-Clpyraz-4Fpip	0.9256	1.0	0.95	0.9819	0.9367	novel	F lowers SA score
+8	Nc1nnc(NC2CC(CC)CN(c3cnc(Cl)cn3)C2)o1	oxadiaz-Clpyraz-3Etpip	0.9204	1.0	0.95	0.9439	0.9385	novel	Et group
+8	Nc1nnc(NC2CCN(c3nc(F)cnc3F)CC2)o1	oxadiaz-diFpyrazine-pip	0.9179	1.0	0.95	0.8904	0.9283	novel	DiFluoro pyrazine
+8	Nc1nnc(NC2CC(O)CN(c3cnc(Cl)cn3)C2)o1	oxadiaz-Clpyraz-4OHpip	0.9023	1.0	0.95	1.0	0.8627	novel	OH lowers druglike
+8	Nc1nnc(NC2CCN(c3cccc(Cl)n3)CC2)o1	oxadiaz-2Clpyrid-pip	0.9127	1.0	0.95	0.8299	0.9167	novel	Cl-pyridine lower novelty
+8	Nc1nnc(NC2CCN(c3ccc(Cl)nn3)CC2)o1	oxadiaz-Clpyridaz-pip	0.9245	1.0	0.95	0.8947	0.9345	novel	Cl-pyridazine close
+8	Nc1nnc(NC2CCN(c3cnc(SC)cn3)CC2)o1	oxadiaz-MeSpyrazine-pip	0.926	1.0	0.95	0.9535	0.9034	novel	MeS-pyrazine
+8	Nc1nnc(NC2CCN(c3cnc(SC(F)(F)F)cn3)CC2)o1	oxadiaz-SCF3pyraz-pip	0.9062	1.0	0.85	0.9738	0.8961	novel	SCF3 too lipophilic
+8	CN(c1nnc(N)o1)C1CCN(c2cnc(Cl)cn2)CC1	NMe-oxadiaz-Clpyraz-pip	0.9046	1.0	0.85	0.9362	0.9515	novel	N-Me kills gram_neg
+8	Nc1nnc(NC2CCN(c3cnc(Cl)cn3)CC2)[nH]1	aminothiadiaz-Clpyraz	0.9273	1.0	0.95	0.9865	0.8859	novel	Aminothiadiazole head
+8	Nc1cc(NC2CCN(c3cnc(Cl)cn3)CC2)no1	isoxaz-Clpyraz-pip	0.9123	1.0	0.95	0.8118	0.9455	novel	Isoxazole head
+9	NCC1CCN(c2cnc(Cl)cn2)CC1	aminomethyl-Clpyrazpip	0.8382	0.83	0.75	0.9505	0.9131	novel	MW<250 hurts, SA better
+9	NC(=O)NC1CCN(c2cnc(Cl)cn2)CC1	urea-Clpyraz-pip	0.9106	1.0	0.95	0.8055	0.9088	novel	Urea linker decent
+9	NC(=O)C1CCN(c2cnc(Cl)cn2)CC1	amide-Clpyraz-pip	0.8532	0.9	0.85	0.788	0.9157	novel	Amide linker
+9	NCCNc1cnc(Cl)cn1	aminoethyl-Clpyrazine	0.8302	0.75	0.95	0.8733	0.8486	novel	Too small
+9	NC1CCN(c2cnc(Cl)cn2)CC1	amino-pip-Clpyraz	0.84	0.83	0.75	1.0	0.8783	novel	Simple amino-pip, MW<250
+9	Nc1ccnc(N2CCN(c3cnccn3)CC2)c1	aminopyrid-pip-pyraz	0.8904	1.0	0.85	0.8025	0.9279	novel	Aminopyridine head
+9	NS(=O)(=O)c1cc(N2CCN(c3cnccn3)CC2)ccn1	sulfonamide-Clpyraz	0.853	1.0	0.75	0.813	0.9189	novel	Sulfonamide too similar
+9	NCC1CCN(c2ncncn2)CC1	aminoMe-triazine-pip	0.8259	0.8	0.85	0.9408	0.8591	novel	Triazine too small
+9	NC(=O)CN1CCN(c2cnc(Cl)cn2)CC1	acetamido-Clpyraz-pip	0.8529	1.0	0.75	0.8138	0.9027	novel	Acetamido
+9	NC(=O)c1nnc(NC2CCN(c3cnccn3)CC2)o1	carboxamide-pyraz-pip	0.8965	1.0	0.95	0.8345	0.9041	novel	Carboxamide head
+9	NNC(=O)C1CCN(c2cnc(Cl)cn2)CC1	hydrazide-pyraz-pip	0.8628	1.0	0.95	0.7667	0.7261	novel	Hydrazide
+10	Nc1ccc2[nH]nn(C3CCNCC3)c2c1	benzotriaz-pip-amine	0	0	0	0	0	error	Invalid SMILES
+10	Nc1nn(C2CCN(c3ccccn3)CC2)c(=O)cc1	pyridazinone-piperaz	0.8847	1.0	0.85	0.7573	0.9417	novel	Pyridazinone good druglike
+10	Nc1nc2ccccc2n1C1CCN(c2cnc(Cl)cn2)CC1	aminobenzimid-Clpyraz	0.8774	1.0	0.75	0.9018	0.8913	novel	Low gram_neg
+10	NC1=CC(N)=C(N2CCN(c3cnccn3)CC2)C=C1	dihydropyrid-diamino	0.8729	1.0	0.95	0.7481	0.6955	novel	Low druglike
+10	Nc1[nH]nc(C2CCN(c3cnccn3)CC2)c1	pyrazole-pip-pyraz	0.8956	0.9	0.95	0.9398	0.914	novel	MW<250 limits antibacterial
+10	Nc1nc(NC2CCNCC2)c2ccccc2n1	aminoquinaz-pip	0.8756	0.9	0.95	0.8071	0.8713	novel	Quinazoline scaffold
+10	Nc1cnc2cccc(N3CCNCC3)c2n1	imidazopyrid-amine-pip	0.802	0.9	0.95	0.6601	0.8751	novel	Low novelty
+10	Nc1nc(N)nc(N2CCN(c3cnccn3)CC2)n1	triazine-pip-pyraz	0.8702	1.0	0.85	0.8145	0.8599	novel	Triazine lower gram_neg
+10	NC(=O)c1cc(N2CCN(c3cnccn3)CC2)c[nH]1	pyrroleamide-pip	0.9056	1.0	0.95	0.8724	0.9172	novel	Pyrroleamide decent
+10	Nc1coc2cc(N3CCN(c4cnccn4)CC3)ccn12	oxazolopyrid-amine	0	0	0	0	0	error	Invalid SMILES
+11	NCC(=O)N1CCN(c2cnc(Cl)cn2)CC1	amino-acetyl-Clpyraz-pip	0.8568	1.0	0.75	0.8544	0.894	novel	Simple acetamide head
+11	N=C(N)NC(=O)N1CCN(c2cnc(Cl)cn2)CC1	cyanoguanid-Clpyraz-pip	0.8631	1.0	0.85	0.9018	0.7452	novel	Cyanoguanidine
+11	NNC(=O)NC1CCN(c2cnc(Cl)cn2)CC1	semicarbaz-Clpyraz	0.8672	1.0	0.95	0.8271	0.7036	novel	Semicarbazide hurts druglike
+11	Nc1nnc(N2CCN(c3cnc(Cl)cn3)CC2)o1	oxadiaz-Clpyraz-piperaz	0.8963	1.0	0.85	0.9898	0.9229	novel	Piperazine variant
+11	NC1=NOC(=O)N1C1CCN(c2cnc(Cl)cn2)CC1	aminooxadiazolon-Clpyraz	0.8908	1.0	0.85	0.8504	0.9349	novel	Oxadiazolinone
+11	Nc1nnn(C2CCN(c3cnc(Cl)cn3)CC2)n1	tetrazole-Clpyraz-pip	0.9081	1.0	0.85	0.9694	0.9285	novel	Tetrazole head
+11	Nc1[nH]nc(C)c1C1CCN(c2cnc(Cl)cn2)CC1	3aminopyrazole-Clpyraz	0.9065	1.0	0.85	0.9115	0.9428	novel	3-aminopyrazole
+11	Nc1nnc(/C=N/NC2CCN(c3cnccn3)CC2)o1	acylhydraz-oxadiaz-pyraz	0.895	1.0	0.95	0.9648	0.7987	novel	Hydrazone linker
+11	NC(=N)N1CCN(c2cnc(Cl)cn2)CC1	cyanamide-Clpyraz-pip	0.8659	0.9	0.95	0.9668	0.7697	novel	Cyanamide head
+11	NCCc1nnc(NC2CCN(c3cnc(Cl)cn3)CC2)o1	aminoEt-oxadiaz-Clpyraz	0.9292	1.0	0.95	0.9427	0.921	novel	Extended aminoethyl close
+12	CNc1nnc(NC2CCN(c3cnc(Cl)cn3)CC2)o1	oxadiaz-NHMe-Clpyraz	0.8763	1.0	0.8	0.9798	0.9401	novel	NHMe kills gram_neg
+12	Nc1nnc(NC2CCN(c3cnc(C#C)cn3)CC2)o1	oxadiaz-ethynylpyraz-pip	0.9278	1.0	0.95	0.9865	0.8927	novel	Ethynyl close
+12	Nc1nnc(NC2CCN(c3cnc(/C=C)cn3)CC2)o1	oxadiaz-vinylpyraz-pip	0.9344	1.0	0.95	0.9865	0.9313	novel	NEW CHAMPION — vinyl pyrazine
+12	Nc1nnc(NC2CCN(c3cnc(C(C)C)cn3)CC2)o1	oxadiaz-iPrpyraz-pip	0.9326	1.0	0.95	0.9535	0.9389	novel	Ties previous champion
+12	Nc1nnc(NC2CCN(c3nc(Cl)cnc3Cl)CC2)o1	oxadiaz-diClpyraz-pip	0.9317	1.0	0.95	0.956	0.9389	novel	DiCl close
+12	Nc1nnc(NC2CCN(c3c[n+]([O-])c(Cl)cn3)CC2)o1	oxadiaz-pyrazNO-pip	0.8808	1.0	0.95	0.8791	0.8088	novel	N-oxide hurts SA
+12	Nc1nnc(NC2CCNC(c3cnc(Cl)cn3)CC2)o1	oxadiaz-Clpyraz-diazep	0.9201	1.0	0.95	1.0	0.8894	novel	Diazepane perfect novelty poor SA
+12	Nc1nnc(NC2CC(F)(F)CN(c3cnc(Cl)cn3)C2)o1	oxadiaz-Clpyraz-diFpip	0.928	1.0	0.95	1.0	0.9347	novel	DiFluoro pip perfect novelty
+12	Nc1nnc(NC2CC3(CC3)CN(c3cnc(Cl)cn3)C2)o1	oxadiaz-Clpyraz-spiropip	0.9244	1.0	0.95	1.0	0.9385	novel	Spirocyclic poor SA
+13	Nc1nnc(NC2CCN(c3cnc(/C=C/C)cn3)CC2)o1	oxadiaz-allylpyraz-pip	0.9331	1.0	0.95	0.9717	0.9379	novel	Allyl pyrazine
+13	Nc1nnc(NC2CCN(c3cnc(C(=C)C)cn3)CC2)o1	oxadiaz-MeVinylpyraz-pip	0.9301	1.0	0.95	0.9481	0.9379	novel	Methylvinyl
+13	Nc1nnc(NC2CCN(c3cnc(/C=C\C4CC4)cn3)CC2)o1	oxadiaz-cPrvinylpyraz-pip	0.9357	1.0	0.95	1.0	0.929	novel	NEW CHAMPION — cyclopropylvinyl
+13	Nc1nnc(NC2CC(C)CN(c3cnc(/C=C)cn3)C2)o1	oxadiaz-vinylpyraz-3Mepip	0.9273	1.0	0.95	1.0	0.9364	novel	Perfect novelty but SA drops
+13	Nc1nnc(NC2CCN(c3cnc(/C=C/C=O)cn3)CC2)o1	oxadiaz-formylvinylpyraz	0.9076	1.0	0.95	0.9432	0.8034	novel	Aldehyde hurts druglike
+13	Nc1nnc(NC2CCN(c3cnc(/C=C\F)cn3)CC2)o1	oxadiaz-Fvinylpyraz-pip	0.9299	1.0	0.95	0.9655	0.9371	novel	Fluorovinyl
+13	Nc1nnc(NC2CCN(c3nc(Cl)cnc3C#N)CC2)o1	oxadiaz-CNClpyraz-pip	0.9351	1.0	0.95	1.0	0.9257	novel	CN+Cl close second
+13	Nc1nnc(NC2CCN(c3cnc(C(C)(C)C)cn3)CC2)o1	oxadiaz-tBupyraz-pip	0.9241	1.0	0.95	0.8946	0.9413	novel	tBu too bulky
+13	Nc1nnc(NC2CCN(c3cnc(C4=CC4)cn3)CC2)o1	oxadiaz-MCPpyraz-pip	0.9255	1.0	0.95	0.9242	0.935	novel	Methylenecyclopropyl
+13	Nc1nnc(NC2CCN(c3cnc(C#Cc4ccccc4)cn3)CC2)o1	oxadiaz-PhCCpyraz-pip	0.9123	1.0	0.95	0.9145	0.8409	novel	Phenylethynyl too big
+13	Nc1nnc(NC2CCN(c3c(C)nc(/C=C)cn3)CC2)o1	oxadiaz-MeVinylpyraz2	0.9263	1.0	0.95	0.9328	0.9371	novel	Methyl+vinyl
+14	Nc1nnc(NC2CCN(c3cnc(C4=CCC4)cn3)CC2)o1	oxadiaz-cBuenepyraz-pip	0.933	1.0	0.95	0.9649	0.9391	novel	Cyclobutenyl close
+14	Nc1nnc(NC2CCN(c3cnc(C4(F)CC4)cn3)CC2)o1	oxadiaz-diFcPrpyraz-pip	0.9301	1.0	0.95	0.9655	0.9363	novel	DiFluorocyclopropyl
+14	Nc1nnc(NC2CCN(c3cnc(C4(C)CC4)cn3)CC2)o1	oxadiaz-1MecPrpyraz-pip	0.9315	1.0	0.95	0.9659	0.9378	novel	Methylcyclopropyl
+14	Nc1nnc(NC2CCN(c3cnc(C4COC4)cn3)CC2)o1	oxadiaz-oxetanepyraz-pip	0.9216	1.0	0.95	0.915	0.9187	novel	Oxetanyl
+14	Nc1nnc(NC2CCN(c3cnc(/C=C)cn3)CC2)s1	thiadiaz-vinylpyraz-pip	0.9351	1.0	0.95	0.9679	0.9432	novel	Thiadiazole+vinyl 2nd place
+14	Nc1nn[nH]c1NC1CCN(c2cnc(/C=C)cn2)CC1	aminotriaz-vinylpyraz-pip	0.9267	1.0	0.95	1.0	0.8829	novel	Perfect novelty low druglike
+14	Nc1nnc(NC2CCN(c3ncc(/C=C)cn3)CC2)o1	oxadiaz-vinyl2pyraz-pip	0.9212	1.0	0.95	0.8914	0.9313	novel	Different regiochemistry
+14	Nc1nnc(NC2CCN(c3cnc(C4CC4)cn3)CC2)o1	oxadiaz-cPr-pyraz-pip	0.9244	1.0	0.95	0.9028	0.9363	novel	Direct cyclopropyl
+14	Nc1nnc(NC2CCN(c3cnc(C(F)F)cn3)CC2)o1	oxadiaz-CHF2pyraz-pip	0.9265	1.0	0.95	0.9242	0.9369	novel	Difluoromethyl
+14	Nc1nnc(NC2CCN(c3nc(/C=C)cnc3C#N)CC2)o1	oxadiaz-CNvinylpyraz-pip	0.933	1.0	0.95	1.0	0.9248	novel	CN+vinyl combo
+14	Nc1nnc(NC2CCN(c3cnc(N=[N+]=[N-])cn3)CC2)o1	oxadiaz-N3pyraz-pip	0.855	1.0	0.85	1.0	0.5441	novel	Azide kills druglike
+15	Nc1cnc(N2CCNCC2)c(Cl)n1	aminopyraz-Clpip-simple	0.8357	0.9	0.95	0.7023	0.847	novel	Simple aminopyrazine
+15	Nc1nnc(NC(=O)C2CCN(c3cnccn3)CC2)o1	acetamid-pyraz-pip2	0.8957	1.0	0.95	0.8096	0.9132	novel	Acetamide link
+15	Nc1ccc(C(=O)N2CCN(c3cnccn3)CC2)cc1	aminobenzoate-pyrazpip	0.8767	1.0	0.85	0.7014	0.9164	novel	Best SA (1.99) but lower score
+15	NC(=O)C1CCN(c2cnc(N)cn2)CC1	pip4carboxamid-aminopyraz	0.8237	0.9	0.85	0.7153	0.8589	novel	Simple carboxamide
+15	Nc1nnc(C2CCN(c3cnccn3)CC2)s1	amino-thiadiaz-pyrazpip	0.907	1.0	0.85	0.9244	0.9391	novel	Thiadiazole C-linked
+15	NC1CCC(Nc2cnc(Cl)cn2)CC1	aminocyclohex-pyrazine	0.9054	0.9	0.95	1.0	0.9038	novel	Perfect novelty MW<250
+15	NNc1nnc(N2CCN(c3cnccn3)CC2)o1	hydraz-oxadiaz-pyraz	0.8819	1.0	0.85	1.0	0.7784	novel	Hydrazine
+16	NC1CCC(Nc2cnc(Cl)c(C)n2)CC1	aminocyclohex-Clpyraz-Me	0.871	0.9	0.85	0.8977	0.9157	novel	Still MW<250
+16	NC1CCC(Nc2nc(Cl)cnc2Cl)CC1	aminocyclohex-diClpyraz	0.9126	1.0	0.85	0.9468	0.9289	novel	DiCl-pyrazine MW>250
+16	NC1CCN(c2cnc(/C=C)cn2)CC1	aminopip-vinylpyraz	0.8391	0.83	0.75	1.0	0.891	novel	Too small MW
+16	Nc1nnc(C(=O)NC2CCN(c3cnccn3)CC2)o1	pip-amide-oxadiaz	0.8739	1.0	0.85	0.8188	0.8993	novel	Amide linker
+16	Nc1nnc(C2CCN(c3cnc(Cl)cn3)CC2)o1	pip-oxadiaz-amino-Cl	0.9138	1.0	0.85	0.9838	0.945	novel	C-linked pip lower gram_neg
+17	NC(=N)C1CCN(c2cnc(Cl)cn2)CC1	amidine-pyraz-pip	0.8788	0.9	0.95	0.9285	0.801	novel	Amidine MW<250
+17	NC(=N)NC(=N)N1CCN(c2cnccn2)CC1	biguanide-pyrazpip	0.8337	0.9	0.85	1.0	0.6872	novel	Biguanide low druglike
+17	Nc1[nH]nc2c1CCN(c1cnc(Cl)cn1)C2	pyrazolofused-pyraz	0.9294	1.0	0.95	1.0	0.8944	novel	Fused pyrazole perfect novelty
+17	Nc1[nH]nc2ccc(N3CCN(c4cnc(Cl)cn4)CC3)cc12	indazole-NH-Clpyrazpip	0.9256	1.0	0.95	0.9544	0.8733	novel	Indazole head
+17	Nc1ccc(N2CCN(c3cnccn3)CC2)nn1	pyridazamine-pyrazpip	0.8877	1.0	0.85	0.9062	0.9104	novel	Pyridazine good SA 2.33
+17	Nc1nc(N2CCN(c3cnc(Cl)cn3)CC2)ccn1	aminopyrimid-Clpyrazpip	0.8794	1.0	0.85	0.7345	0.9385	novel	Pyrimidine too similar
+17	Nc1nc2ccc(N3CCN(c4cnccn4)CC3)cc2o1	benzoxazamine-pyrazpip	0.8936	1.0	0.85	0.8802	0.8836	novel	Benzoxazole decent
+17	NC(=O)N/N=C/C1CCN(c2cnc(Cl)cn2)CC1	semicarbazone-Clpyraz	0.9047	1.0	0.95	0.8865	0.8192	novel	Semicarbazone
+17	NC1=NOC(C2CCN(c3cnc(Cl)cn3)CC2)C1	aminoisoxazoline-Clpyraz	0.9013	1.0	0.85	0.9577	0.9434	novel	Isoxazoline
+17	Nc1nc(C2CCN(c3cnccn3)CC2)cs1	aminothiaz-pip-pyraz	0.8115	1.0	0.85	0.6121	0.9469	novel	Thiazole too similar to halicin
+17	Nc1nc2ccc(N3CCN(c4cnccn4)CC3)cc2s1	aminobenzothiaz-pyrazpip	0.8824	1.0	0.85	0.7913	0.8901	novel	Benzothiazole
+18	Nc1[nH]nc2c1CCN(c1cnc(/C=C)cn1)C2	pyrazolofused-vinylpyraz	0.8973	0.9	0.95	1.0	0.91	novel	MW<250 still
+18	Nc1[nH]nc2c1CCN(c1cnc(/C=C\C3CC3)cn1)C2	pyrazolofused-cPrvinylpyraz	0.936	1.0	0.95	1.0	0.948	novel	NEW CHAMPION — fused pyrazole+cPrvinyl
+18	Nc1nnc(NC2CCN(c3cnc(/C=C\C4CC4)cn3)CC2)s1	thiadiaz-cPrvinylpyraz-pip	0.9172	1.0	0.85	0.9981	0.9304	novel	Thiadiazole lower gram_neg
+18	Nc1nnc(NC2CCN(c3cnc(/C=C/C4CC4)cn3)CC2)o1	oxadiaz-EcPrvinyl-pip	0.9357	1.0	0.95	1.0	0.929	novel	E-isomer same score
+18	Nc1[nH]c(N2CCN(c3cnc(Cl)cn3)CC2)cn1	aminoimidaz-Clpyraz-pip2	0.9356	1.0	0.95	0.9889	0.922	novel	Near-champion simpler molecule
+18	Nc1[nH]nc2c1CCN(c1cnc(/C=C/C)cn1)C2	pyrazolofused-allylpyraz	0.9322	1.0	0.95	1.0	0.9238	novel	Allyl variant
+18	Nc1nnc(-n2ccnc2C2CCN(c3cnccn3)CC2)o1	oxadiaz-triaz-pyrazpip	0.9018	1.0	0.85	0.9818	0.8812	novel	Triazole linker
+18	Nc1nnc(NC2CCN(c3cnc(CN)cn3)CC2)o1	diNH2-oxadiaz-pyrazpip	0.8801	1.0	0.85	0.923	0.8551	novel	Double amine
+19	Nc1[nH]nc2c1C(C)CN(c1cnc(/C=C\C3CC3)cn1)C2	pyrazolofused-Me-cPrvinyl	0.9104	1.0	0.85	1.0	0.9539	novel	Me drops gram_neg
+19	Nc1[nH]nc2c1CCN(c1cnc(Cl)cn1)C2	pyrazolofused-Clpyraz	0.9294	1.0	0.95	1.0	0.8944	novel	Fused+Cl baseline
+19	Nc1[nH]nc2c1CCN(c1nc(/C=C\C3CC3)cnc1C#N)C2	pyrazolofused-CN-cPrvinyl	0.9336	1.0	0.95	1.0	0.9461	novel	CN+cPrvinyl fused
+19	Nc1[nH]c(N2CCN(c3cnc(/C=C\C4CC4)cn3)CC2)cn1	aminoimidaz-cPrvinyl-pip	0.9385	1.0	0.95	1.0	0.9451	novel	NEW CHAMPION — aminoimidazole + cPrvinyl
+20	Nc1[nH]c(N2CCN(c3cnc(/C=C\C4CC4)cn3)CC2)c(C)n1	aminoimidaz-Me-cPrvinyl	0.9313	1.0	0.95	0.9511	0.9459	novel	Me drops novelty
+20	Nc1[nH]c(N2CCN(c3cnc(/C=C/C4CC4)cn3)CC2)cn1	aminoimidaz-Evinyl-pip	0.9385	1.0	0.95	1.0	0.9451	novel	E-isomer ties champion
+20	Nc1[nH]nc(N2CCN(c3cnc(/C=C\C4CC4)cn3)CC2)c1	aminopyraz-cPrvinyl-piperaz	0.9343	1.0	0.95	0.9664	0.9451	novel	Pyrazole head close
+20	Nc1[nH]c(N2CC(C)CN(c3cnc(/C=C\C4CC4)cn3)C2)cn1	aminoimidaz-cPrvinyl-3Mepiperaz	0.9098	1.0	0.85	1.0	0.9476	novel	3Me drops gram_neg
+21	Nc1ccc(N2CCN(c3cnc(/C=C\C4CC4)cn3)CC2)s1	aminothiophene-cPrvinyl	0.8799	0.93	0.75	0.9969	0.9678	novel	Thiophene low gram_neg
+21	Nc1nnn(C2CCN(c3cnc(/C=C\C4CC4)cn3)CC2)n1	aminotetraz-cPrvinyl-pip	0.9144	1.0	0.85	1.0	0.9542	novel	Tetrazole head
+21	NC1CCC(c2nnc(NC3CCN(c4cnc(Cl)cn4)CC3)o2)CC1	aminocyclohex-oxadiaz-Clpyraz	0.9165	1.0	0.85	1.0	0.9184	novel	Cyclohexyl extension
+22	Nc1[nH]c(N2CCN(c3cnc(/C=C)cn3)CC2)cn1	aminoimidaz-vinyl-pip	0.9363	1.0	0.95	1.0	0.9282	novel	Simple vinyl variant
+22	Nc1[nH]c(N2CCN(c3cnc(Br)cn3)CC2)cn1	aminoimidaz-Br-pip	0.9363	1.0	0.95	0.9917	0.9262	novel	Br variant ties vinyl
+22	Nc1[nH]c(N2CCN(c3cnc(/C=C/C)cn3)CC2)cn1	aminoimidaz-allyl-pip	0.9321	1.0	0.95	0.9611	0.9396	novel	Allyl close
+22	Nc1[nH]c(N2CCN(c3cnc(C(C)C)cn3)CC2)cn1	aminoimidaz-iPr-pip	0.9313	1.0	0.95	0.94	0.9414	novel	iPr best druglike
+22	Nc1occ(N2CCN(c3cnc(/C=C\C4CC4)cn3)CC2)n1	aminooxaz-cPrvinyl-pip	0.9125	1.0	0.85	0.9779	0.9605	novel	Oxazole lower gram_neg
+23	Nc1[nH]c(N2CCN(c3ccnc(Cl)c3)CC2)cn1	aminoimidaz-Clpyridine-pip	0.9206	1.0	0.95	0.8929	0.9059	novel	Cl-pyridine lower novelty
+23	Nc1[nH]c(/C=C/C2CCN(c3cnccn3)CC2)cn1	aminoimidaz-pip-vinyl	0.9386	1.0	0.95	1.0	0.9434	novel	NEW CHAMPION — vinyl bridge
+23	Nc1[nH]c(N2CCN(c3cnc(C(F)(F)F)cn3)CC2)cn1	aminoimidaz-CF3pyraz-pip	0.9352	1.0	0.95	0.9779	0.932	novel	CF3 variant
+23	Nc1[nH]cnc1N1CCN(c2cnc(Cl)cn2)CC1	Clpyraz-piperaz-aminoimidaz	0.9378	1.0	0.95	1.0	0.922	novel	Reversed connection
+23	Nc1[nH]c(N2CCN(c3ccc(Cl)nn3)CC2)cn1	aminoimidaz-Clpyridaz-pip	0.9292	1.0	0.95	0.9354	0.922	novel	Cl-pyridazine
+23	Nc1nc(N2CCN(c3cnc(/C=C\C4CC4)cn3)CC2)[nH]n1	amino124triaz-cPrvinyl	0.9328	1.0	0.95	0.9714	0.9329	novel	1,2,4-triazole head
+24	Nc1[nH]c(/C=C\C2CCN(c3cnccn3)CC2)cn1	aminoimidaz-Evinylbr-pip	0.9386	1.0	0.95	1.0	0.9434	novel	Z-isomer same score
+24	Nc1[nH]c(/C=C/C2CCN(c3cnc(Cl)cn3)CC2)cn1	aminoimidaz-vinylbr-Clpyraz	0.9188	1.0	0.85	1.0	0.9546	novel	Cl-pyrazine drops gram_neg with bridge
+24	Nc1[nH]c(CC2CCN(c3cnccn3)CC2)cn1	aminoimidaz-CC-pip-pyraz	0.9307	1.0	0.95	0.9311	0.9325	novel	Direct CC link, best SA 0.81
+24	Nc1[nH]c(CCC2CCN(c3cnccn3)CC2)cn1	aminoimidaz-Et-pip-pyraz	0.9298	1.0	0.95	0.9135	0.9417	novel	Ethyl chain, SA 0.81
+24	Nc1[nH]c(/C=C/C2CCN(c3ncccn3)CC2)cn1	aminoimidaz-vinyl-pip-pyrimid	0.9306	1.0	0.95	0.9409	0.9434	novel	Pyrimidine variant
+25	Nc1nc(N2CCN(c3cnccn3)CC2)c2nccnc2n1	aminopteridine-pip-pyraz	0.8758	1.0	0.85	0.902	0.8526	novel	Pteridine scaffold
+25	Nc1[nH]c2cc(N3CCN(c4cnccn4)CC3)ccc2c1	aminoindole-pyrazpip	0.9198	1.0	0.95	0.8955	0.8772	novel	Indole good SA 2.45
+25	Nc1nc2[nH]cnc2c(N2CCN(c3cnccn3)CC2)n1	aminopurine-pyrazpip	0.9009	1.0	0.95	0.9282	0.841	novel	Purine scaffold
+25	Nc1[nH]c(/C=C/C(=O)N2CCN(c3cnccn3)CC2)cn1	acryloyl-aminoimidaz-pyraz	0.9084	1.0	0.95	0.9297	0.8908	novel	Acrylamide variant
+25	Nc1[nH]c(N2CC(/C=C)CN(c3cnccn3)C2)cn1	aminoimidaz-piperaz-Cvinyl	0.9224	1.0	0.95	1.0	0.9027	novel	Vinyl on piperazine C
+26	Nc1[nH]c(/C=N/OC2CCN(c3cnccn3)CC2)cn1	aminoimidaz-oxime-pyraz	0.9186	1.0	0.95	1.0	0.8181	novel	Oxime linker
+26	Nc1[nH]c(/C=C/CC2CCN(c3cnccn3)CC2)cn1	aminoimidaz-propenyl-pip	0.9169	1.0	0.85	0.977	0.949	novel	Propenyl bridge drops gram_neg
+26	NC1=CCC(N2CCN(c3cnccn3)CC2)NC1=O	aminoDHU-pyrazpip	0.8729	1.0	0.85	0.9061	0.8702	novel	Dihydrouracil
+27	Nc1[nH]c(CC2CCN(c3cnc(Cl)cn3)CC2)cn1	aminoimidaz-CC-Clpyraz	0.937	1.0	0.95	0.9658	0.9512	novel	Best druglike 0.9512 + SA 0.794
+27	Nc1[nH]c(CC2CCN(c3cnc(Br)cn3)CC2)cn1	aminoimidaz-CC-Brpyraz	0.9163	1.0	0.85	0.968	0.9475	novel	Br drops gram_neg
+27	Nc1[nH]c(C#CC2CCN(c3cnccn3)CC2)cn1	aminoimidaz-propargyl-pip	0.9257	1.0	0.95	0.9869	0.8776	novel	Propargyl lower druglike
+27	Nc1[nH]cnc1N1CCN(/C=C/c2cnccn2)CC1	pyraz-vinyl-piperaz-imidaz	0.934	1.0	0.95	1.0	0.9243	novel	Reversed vinyl
+28	Nc1[nH]c(/C=C/C2CCN(c3nc(F)cnc3F)CC2)cn1	aminoimidaz-vinyl-diFpyraz	0.9279	1.0	0.95	0.9512	0.9529	novel	DiF-pyrazine
+28	Nc1[nH]c(/C=C/C2CC(C)CN(c3cnccn3)C2)cn1	aminoimidaz-vinyl-4Mepip-pyraz	0.9298	1.0	0.95	1.0	0.9499	novel	4Me-pip drops SA
+28	Nc1[nH]c(C2CCC(N3CCN(c4cnccn4)CC3)C2)cn1	aminoimidaz-cPent-pyraz	0.9313	1.0	0.95	0.9837	0.9432	novel	Cyclopentyl linker
+29	Nc1[nH]c(CC2CCN(c3cnc(/C=C)cn3)CC2)cn1	aminoimidaz-CC-vinylpyraz	0.9396	1.0	0.95	1.0	0.9477	novel	NEW CHAMPION — CC link + vinyl pyrazine
+29	Nc1[nH]c(CC2CCN(c3cnc(C#N)cn3)CC2)cn1	aminoimidaz-CC-CNpyraz	0.9392	1.0	0.95	1.0	0.9367	novel	CN-pyrazine close second
+29	Nc1[nH]c(CC2CCN(c3cnc(Cl)cn3)CC2)c(F)n1	aminoimidaz-F-CC-Clpyraz	0.9069	1.0	0.85	0.908	0.953	novel	F drops gram_neg
+29	Nc1[nH]c(CC2CCN(c3cnc(C(F)(F)F)cn3)CC2)cn1	aminoimidaz-CC-CF3pyraz	0.9162	1.0	0.85	0.963	0.9519	novel	CF3 drops gram_neg
+30	Nc1[nH]c(CC2CCN(c3cnc(C#C)cn3)CC2)cn1	aminoimidaz-CC-ethynylpyraz	0.9323	1.0	0.95	0.9907	0.9135	novel	Ethynyl lower druglike
+30	Nc1[nH]c(CC2CCN(c3cnc(SC)cn3)CC2)cn1	aminoimidaz-CC-SMepyraz	0.9249	1.0	0.95	0.9244	0.9201	novel	MeS variant
+30	Nc1[nH]c(CC2CCN(c3cnc(C)cn3)CC2)cn1	aminoimidaz-CC-Mepyraz	0.9149	1.0	0.95	0.8186	0.9427	novel	Methyl lower novelty
+30	Nc1[nH]c(CC2CCN(c3nc(Cl)cnc3C#N)CC2)cn1	aminoimidaz-CC-CNClpyraz	0.9309	1.0	0.95	0.9467	0.9464	novel	CN+Cl variant
+30	Nc1[nH]c(/C=C/C2CCN(c3cnccn3)CC2)c(Cl)n1	amino4Climidaz-vinyl-pyraz	0.9177	1.0	0.85	0.9901	0.9546	novel	Cl on imidazole drops gram_neg

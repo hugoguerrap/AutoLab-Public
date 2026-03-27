@@ -1,0 +1,65 @@
+experiment	smiles	composite	qed	bbb_score	cns_mpo	cogn_pharm	pains	note
+baseline	Cn1cnc2c1c(=O)n(C)c(=O)n2C	0.6477	0.5385	0.7435	1.0	0.2	CLEAN	Caffeine — xanthine baseline
+baseline	NC(=O)CN1CCCC1=O	0.717	0.5424	0.7379	1.0	0.55	CLEAN	Piracetam — racetam prototype
+baseline	O=C1CCN1CC(=O)c1ccccc1	0.7218	0.5272	1.0	1.0	0.2	CLEAN	Aniracetam — AMPA modulator
+baseline	NC(=O)CS(=O)C(c1ccccc1)c1ccccc1	0.8162	0.9055	0.9994	1.0	0.2	CLEAN	Modafinil — wakefulness agent, BEST BASELINE
+baseline	COc1cc2c(cc1OC)C(=O)CC2CC1CCN(Cc2ccccc2)CC1	0.6663	0.7307	0.7205	0.75	0.4	CLEAN	Donepezil — AChE inhibitor
+exp_01	CN(C)C(=O)CN1CCCC1=O	0.7276	0.5547	0.75	1.0	0.55	CLEAN	N,N-dimethyl piracetam — low QED
+exp_01	CN(C)C(=O)CN1CCC(c2ccccc2)C1=O	0.8602	0.8398	1.0	1.0	0.55	CLEAN	4-phenyl-pyrrolidone-NNdm — NEW BEST, in PubChem
+exp_01	O=C1CCCN1CC(=O)c1ccccc1	0.8345	0.7562	1.0	1.0	0.55	CLEAN	pyrrolidone-aniracetam — in PubChem
+exp_01	CN(C)C(=O)C(O)N1CCCC1=O	0.7347	0.5465	0.747	1.0	0.55	CLEAN	oxiracetam-dimethyl — hydroxyl hurts BBB
+exp_01	CN(C)C(=O)C(c1ccccc1)N1CCCC1=O	0.8623	0.8094	1.0	1.0	0.55	CLEAN	phenyl-piracetam-NNdm — NEW BEST 0.8623, in PubChem
+exp_02	CN(C)C(=O)C(c1ccc(F)cc1)N1CCCC1=O	0.8678	0.8313	1.0	1.0	0.55	CLEAN	4F-phenyl-piracetam-NNdm — NEW BEST, in PubChem
+exp_02	CN(C)C(=O)C(C1CC1)N1CCCC1=O	0.7766	0.6264	0.8226	1.0	0.55	CLEAN	cyclopropyl — low QED
+exp_02	CN(C)C(=O)C(c1cccc(C)c1)N1CCCC1=O	0.8676	0.8304	1.0	1.0	0.55	CLEAN	3Me-phenyl — in PubChem
+exp_02	CN(C)C(=O)C(c1cccs1)N1CCCC1=O	0.8644	0.8176	1.0	1.0	0.55	CLEAN	thienyl — in PubChem
+exp_02	CN(C)C(=O)C(c1ccccn1)N1CCCC1=O	0.8162	0.6648	0.8583	1.0	0.55	CLEAN	2-pyridyl — lower BBB from extra N
+exp_03	CN(C)C(=O)C(c1cnc[nH]1)N1CCCC1=O	0.7905	0.6715	0.7579	1.0	0.55	CLEAN	imidazole-pyrrolidone — pharm only 0.55 (imidazole not matched?)
+exp_03	CN(C)C(=O)C(C1CCNCC1)N1CCCC1=O	0.8279	0.6517	0.7815	1.0	0.75	CLEAN	piperidine-pyrrolidone — dual pharm 0.75, low QED
+exp_03	CN(C)C(=O)C(C1CCN(C)CC1)N1CCCC1=O	0.8306	0.6425	0.8157	1.0	0.75	CLEAN	N-me-piperidine-pyrrolidone — dual pharm but QED low
+exp_03	CN(C)C(=O)C(c1nc2ccccc2[nH]1)N1CCCC1=O	0.9212	0.8918	0.9668	1.0	0.75	CLEAN	benzimidazole-pyrrolidone — 0.9212! in PubChem
+exp_03	CN(C)C(=O)C(c1cc2ccccc2[nH]1)N1CCCC1=O	0.9441	0.9364	1.0	1.0	0.8	CLEAN	indole-pyrrolidone — NEW BEST 0.9441! in PubChem
+exp_04	CN(C)C(=O)C(c1cc2ccccc2n1C)N1CCCC1=O	0.8773	0.8694	1.0	1.0	0.55	CLEAN	N-methyl indole — pharm drops to 0.55 (needs [nH])
+exp_04	CN(C)C(=O)C(c1cc2cc(F)ccc2[nH]1)N1CCCC1=O	0.9458	0.9325	1.0	1.0	0.8	CLEAN	5F-indole-pyrrolidone — in PubChem
+exp_04	CN(C)C(=O)C(c1cc2cc(C)ccc2[nH]1)N1CCCC1=O	0.9462	0.9351	1.0	1.0	0.8	CLEAN	5Me-indole-pyrrolidone — in PubChem
+exp_04	CN(C)C(=O)C(c1cc2cc(Cl)ccc2[nH]1)N1CCCC1=O	0.9463	0.9353	1.0	1.0	0.8	CLEAN	5Cl-indole-pyrrolidone — NEW BEST 0.9463, in PubChem
+exp_04	CN(C)C(=O)C(c1c[nH]c2ccccc12)N1CCCC1=O	0.9441	0.9364	1.0	1.0	0.8	CLEAN	indole3-pyrrolidone — same as C2, in PubChem
+exp_05	Cn1c2c(c(=O)n(C)c2=O)[nH]cn1	0.6358	0.5385	0.7047	1.0	0.2	CLEAN	theophylline — xanthine SMARTS not matched
+exp_05	O=c1[nH]c(=O)c2nc(-c3ccccc3)n(C)c2n1C	0.7011	0.6043	0.7924	1.0	0.2	CLEAN	8-phenyl theophylline — still no xanthine match
+exp_05	CN(C)C(=O)C(c1cc2ccccc2[nH]1)N1CCC(C2CCNCC2)C1=O	0.8887	0.8237	0.9468	0.75	1.0	CLEAN	triple pharm=1.0 but MW penalty drops MPO
+exp_05	CN(C)C(=O)C(c1cc2ccccc2[nH]1)N1CCC(C2CC2)C1=O	0.9448	0.9293	1.0	1.0	0.8	CLEAN	indole-cyclopropyl-pyrrolidone — no improvement
+exp_05	CN(C)C(=O)C(c1cc2c(C)c(F)ccc2[nH]1)N1CCCC1=O	0.9462	0.9349	1.0	1.0	0.8	CLEAN	5Me6F-indole — no improvement over 5Cl
+exp_06	CN(C)C(=O)C(c1cc2ccccc2[nH]1)N1CC(C)(C)CC1=O	0.9466	0.938	1.0	1.0	0.8	CLEAN	gem-dimethyl-pyrrolidone — NEW BEST 0.9466, NOVEL (CID=0)
+exp_06	CN(C)C(=O)CN1CCC(c2cc3ccccc3[nH]2)C1=O	0.9426	0.93	1.0	1.0	0.8	CLEAN	reversed connectivity — NOVEL (CID=0)
+exp_06	CN(C)C(=O)C(c1cc2cc(C(F)(F)F)ccc2[nH]1)N1CCCC1=O	0.9393	0.8988	0.9958	1.0	0.8	CLEAN	5CF3-indole — NOVEL (CID=0)
+exp_06	CN(C)C(=O)C(c1cc2cc(C#C)ccc2[nH]1)N1CCCC1=O	0.9301	0.8609	1.0	1.0	0.8	CLEAN	5-ethynyl-indole — NOVEL (CID=0)
+exp_06	CN(C)C(=O)C(c1cc2c(F)cc(F)cc2[nH]1)N1CCCC1=O	0.9455	0.9318	1.0	1.0	0.8	CLEAN	4,6-diF-indole — NOVEL (CID=0)
+NOTE	CID=0 means NOT in PubChem (prepare.py novelty has false negative: treats CID=0 as found)	—	—	—	—	—	—	Caffeine=CID2519 (real), CID=0=novel
+exp_07	CN(C)C(=O)C(c1cc2ccccc2[nH]1)N1CCC(=O)C1(C)C	0.8965	0.908	1.0	1.0	0.55	CLEAN	3,3dm — pyrrolidone SMARTS broken by gem-dimethyl at 3,3
+exp_07	CN(C)C(=O)C(c1cc2cc(Cl)ccc2[nH]1)N1CC(C)(C)CC1=O	0.9416	0.8867	1.0	1.0	0.8	CLEAN	gemdm+5Cl — no improvement
+exp_07	CN(C)C(=O)C(c1cc2cc(F)ccc2[nH]1)N1CC(C)(C)CC1=O	0.945	0.9403	1.0	1.0	0.8	CLEAN	gemdm+5F — no improvement
+exp_07	CN(C)C(=O)C(C)(c1cc2ccccc2[nH]1)N1CCCC1=O	0.9458	0.9333	1.0	1.0	0.8	CLEAN	alpha-methyl — no improvement
+exp_07	CCN(C)C(=O)C(c1cc2ccccc2[nH]1)N1CCCC1=O	0.9454	0.9318	1.0	1.0	0.8	CLEAN	N-ethyl-N-methyl — no improvement
+exp_08	CN(C)C(=O)C(c1cc2ccccc2[nH]1)N1CC(c2cnc[nH]2)CC1=O	0.8503	0.7461	0.9086	0.9167	0.8	CLEAN	indole-pyrrolidone-imidazole — MW penalty
+exp_08	CN(C)C(=O)C(c1nc2ccccc2[nH]1)N1CCC(C2CCNCC2)C1=O	0.8615	0.7845	0.8995	0.75	0.95	CLEAN	benzim-pyrrolo-piperidine — MW drops MPO
+exp_08	CN(C)C(=O)C(c1cc2ccccc2[nH]1)N1CCC1=O	0.8552	0.8706	1.0	1.0	0.45	CLEAN	indole-azetidinone — pharm only 0.45 (lactam5 SMARTS)
+exp_08	CN(C)C(=O)C1c2cc3ccccc3[nH]2CCN1C(C)=O	—	—	—	—	—	ERROR	fused indolopyrrolo — invalid SMILES
+exp_08	O=C1CCCN1CC(c1cc2ccccc2[nH]1)C1CCNCC1	0.9571	0.9119	1.0	0.9167	1.0	CLEAN	TRIPLE PHARM CHAMPION — NEW BEST 0.9571, NOVEL (CID=0)
+exp_09	O=C1CCCN1CC(c1cc2ccccc2[nH]1)C1CCN(C)CC1	0.9844	0.9374	1.0	1.0	1.0	CLEAN	N-Me-pip CHAMPION — 0.9844! BBB=1, MPO=1, pharm=1, NOVEL
+exp_09	O=C1CCCN1CC(c1cc2cc(F)ccc2[nH]1)C1CCNCC1	0.9556	0.9023	1.0	0.9167	1.0	CLEAN	5F-indole triple — no improvement
+exp_09	O=C1CCCN1CC(c1cc2ccccc2[nH]1)(C)C1CCNCC1	0.9561	0.9042	1.0	0.9167	1.0	CLEAN	alpha-Me triple — no improvement
+exp_09	O=C1CCCN1C(c1cc2ccccc2[nH]1)C1CCNCC1	0.9579	0.9151	1.0	0.9167	1.0	CLEAN	direct linker triple — marginal gain over base
+exp_10	O=C1CCCN1C(c1cc2ccccc2[nH]1)C1CCN(C)CC1	0.9864	0.9454	1.0	1.0	1.0	CLEAN	DIRECT+NMepip — NEW BEST 0.9864! QED↑, NOVEL
+exp_10	O=C1CCCN1CC(c1cc2cc(F)ccc2[nH]1)C1CCN(C)CC1	0.9811	0.9242	1.0	1.0	1.0	CLEAN	5F+NMepip — slight QED drop from F
+exp_10	O=C1CCCN1CC(c1cc2cc(Cl)ccc2[nH]1)C1CCN(C)CC1	0.9226	0.8508	0.8257	1.0	1.0	CLEAN	5Cl+NMepip — Cl kills BBB
+exp_10	O=C1CCCN1CC(c1cc2ccccc2[nH]1)C1CCN(C)(C)CC1	—	—	—	—	—	ERROR	N,N-dimethyl piperidinium — invalid SMILES
+exp_10	O=C1CC(C)(C)CN1CC(c1cc2ccccc2[nH]1)C1CCN(C)CC1	0.9273	0.8691	0.8354	1.0	1.0	CLEAN	gemdm-pyrrolidone+NMepip — BBB drops from MW
+exp_11	O=C1CC(C)CN1C(c1cc2ccccc2[nH]1)C1CCN(C)CC1	0.9848	0.939	1.0	1.0	1.0	CLEAN	4Me-pyrrolidone — marginal QED drop
+exp_11	O=C1CCC(C)N1C(c1cc2ccccc2[nH]1)C1CCN(C)CC1	0.9449	0.9399	0.8688	1.0	1.0	CLEAN	3Me-pyrrolidone — BBB drops
+exp_11	O=C1CCCN1C(c1cc2ccccc2[nH]1)C1CCN(CC)CC1	0.9439	0.936	0.8687	1.0	1.0	CLEAN	N-ethyl pip — BBB drops from logP
+exp_11	O=C1CCCN1C(c1c[nH]c2ccccc12)C1CCN(C)CC1	0.9864	0.9454	1.0	1.0	1.0	CLEAN	3-indolyl variant — ties champion
+exp_11	O=C1CCCN1C(c1cc2cc(F)ccc2[nH]1)C1CCN(C)CC1	0.9846	0.9385	1.0	1.0	1.0	CLEAN	5F-direct-NMepip — slight QED drop
+exp_12	O=C1CCCN12CC(c3cc4ccccc4[nH]3)CCN(C)C2	—	—	—	—	—	ERROR	spiro — invalid SMILES (N valence)
+exp_12	O=C1CCCN1C1CCN(C)CC1c1cc2ccccc2[nH]1	0.9813	0.925	1.0	1.0	1.0	CLEAN	pip-indolyl-pyrrolo — topology change, QED drop
+exp_12	CN1CCC(c2cc3ccccc3[nH]2)C(N2CCCC2=O)C1	0.9813	0.925	1.0	1.0	1.0	CLEAN	reversed topology — same as above
+exp_12	O=C1CCCN1C(c1cc2ccccc2[nH]1)C1CCN(C)C1	0.9465	0.9458	1.0	1.0	0.8	CLEAN	5-mem pyrrolidine — piperidine SMARTS lost, pharm=0.8

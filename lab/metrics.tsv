@@ -1,0 +1,10 @@
+experiment	best_score	iterations	status	description
+antibiotic-discovery	0.9396	30	complete	10 novel gram-neg candidates, 233 molecules evaluated
+drug-discovery	1.0	30	complete	25 novel molecules, QED 0.9484 champion
+materials-discovery	0.999	10	complete	CuSnO3 solar cell candidate, band gap 1.44 eV
+fertilizer-design	0.7964	15	complete	Spiro-diguanidine-biuret, +18.4% over IBDU
+artificial-life	0.6698	10	complete	Multi-blob sigma=0.04, survival+oscillation
+compression	0.6818	11	complete	LZ77+dual Huffman, 4% from gzip
+nanoGPT	1.4534	12	complete	val_loss -13.8%, AMP+LR+weight decay
+prompt-optimizer	0.8049	0	pending	Baseline prompt defined, ready to optimize
+nootropic-discovery	0	0	pending	Baseline not yet run

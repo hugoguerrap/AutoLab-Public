@@ -1,0 +1,12 @@
+commit	val_loss	train_loss	peak_vram_mb	total_steps	status	description
+705227a	1.6867	-	-	-	baseline	Baseline: 6L/384E/6H, no AMP, 10.8M params
+349ef94	1.5155	1.2358	1681	2212	improved	AMP mixed precision training
+exp2	1.4674	1.1310	1681	2176	improved	LR 3e-4→6e-4 + proper cosine schedule with MIN_LR
+reverted	1.4767	1.0636	2205	1676	worse	8 layers + dropout 0.1 (fewer steps hurt more than capacity helped)
+reverted	1.4699	1.1411	951	1252	worse	Grad accum 4x (eff batch 128) — fewer optimizer steps negated benefit
+reverted	1.4826	0.9940	1681	2164	worse	Dropout 0.2→0.1 — overfitting (train 0.99 vs val 1.48)
+reverted	1.4722	1.1408	2419	1501	worse	Batch size 64→96 — fewer steps outweighed better gradients
+exp7	1.4576	1.0257	1681	2207	improved	LR 6e-4→1e-3 — faster learning in early steps
+exp8	1.4534	1.0372	1681	2211	improved	Weight decay 0.1→0.2 — better generalization
+reverted	1.4632	1.1578	1681	2111	worse	Dropout 0.2→0.3 — too much regularization slowed learning
+reverted	1.4563	1.1289	1994	1640	worse	RMSNorm — custom impl slower than PyTorch LayerNorm, fewer steps

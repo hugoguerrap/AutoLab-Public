@@ -1,0 +1,1164 @@
+{
+  "pass_rate": 0.6159,
+  "passed": 101,
+  "total": 164,
+  "total_tokens": 66041,
+  "avg_tokens": 403,
+  "estimated_cost_usd": 0.1189,
+  "errors": {
+    "syntax": 1,
+    "runtime": 62,
+    "timeout": 0,
+    "wrong": 0
+  },
+  "results": [
+    {
+      "task_id": "HumanEval/0",
+      "entry_point": "has_close_elements",
+      "passed": false,
+      "error": "  File \"C:\\Users\\kathe\\AppData\\Local\\Temp\\tmp1zu8uxit.py\", line 13\n    for j in range(i + 1, len(numbers)):\n    ^^^\nIndentationError: expected an indented block after 'for' statement on line 12\n",
+      "tokens": 351
+    },
+    {
+      "task_id": "HumanEval/1",
+      "entry_point": "separate_paren_groups",
+      "passed": true,
+      "error": "",
+      "tokens": 417
+    },
+    {
+      "task_id": "HumanEval/2",
+      "entry_point": "truncate_number",
+      "passed": true,
+      "error": "",
+      "tokens": 265
+    },
+    {
+      "task_id": "HumanEval/3",
+      "entry_point": "below_zero",
+      "passed": true,
+      "error": "",
+      "tokens": 324
+    },
+    {
+      "task_id": "HumanEval/4",
+      "entry_point": "mean_absolute_deviation",
+      "passed": false,
+      "error": "  File \"C:\\Users\\kathe\\AppData\\Local\\Temp\\tmp9y9nrv3k.py\", line 14\n    return 0.0\n    ^^^^^^\nIndentationError: expected an indented block after 'if' statement on line 13\n",
+      "tokens": 357
+    },
+    {
+      "task_id": "HumanEval/5",
+      "entry_point": "intersperse",
+      "passed": true,
+      "error": "",
+      "tokens": 333
+    },
+    {
+      "task_id": "HumanEval/6",
+      "entry_point": "parse_nested_parens",
+      "passed": true,
+      "error": "",
+      "tokens": 399
+    },
+    {
+      "task_id": "HumanEval/7",
+      "entry_point": "filter_by_substring",
+      "passed": true,
+      "error": "",
+      "tokens": 289
+    },
+    {
+      "task_id": "HumanEval/8",
+      "entry_point": "sum_product",
+      "passed": false,
+      "error": "  File \"C:\\Users\\kathe\\AppData\\Local\\Temp\\tmpdph1v8ic.py\", line 15\n    total_product *= num\n    ^^^^^^^^^^^^^\nIndentationError: expected an indented block after 'for' statement on line 14\n",
+      "tokens": 331
+    },
+    {
+      "task_id": "HumanEval/9",
+      "entry_point": "rolling_max",
+      "passed": true,
+      "error": "",
+      "tokens": 339
+    },
+    {
+      "task_id": "HumanEval/10",
+      "entry_point": "make_palindrome",
+      "passed": false,
+      "error": "  File \"C:\\Users\\kathe\\AppData\\Local\\Temp\\tmphzsokoq1.py\", line 21\n    return string\n    ^^^^^^\nIndentationError: expected an indented block after 'if' statement on line 20\n",
+      "tokens": 382
+    },
+    {
+      "task_id": "HumanEval/11",
+      "entry_point": "string_xor",
+      "passed": true,
+      "error": "",
+      "tokens": 280
+    },
+    {
+      "task_id": "HumanEval/12",
+      "entry_point": "longest",
+      "passed": false,
+      "error": "  File \"C:\\Users\\kathe\\AppData\\Local\\Temp\\tmp5hinnv6q.py\", line 15\n    return None\n    ^^^^^^\nIndentationError: expected an indented block after 'if' statement on line 14\n",
+      "tokens": 301
+    },
+    {
+      "task_id": "HumanEval/13",
+      "entry_point": "greatest_common_divisor",
+      "passed": false,
+      "error": "  File \"C:\\Users\\kathe\\AppData\\Local\\Temp\\tmpit168bgw.py\", line 11\n    a, b = b, a % b\n    ^\nIndentationError: expected an indented block after 'while' statement on line 10\n",
+      "tokens": 264
+    },
+    {
+      "task_id": "HumanEval/14",
+      "entry_point": "all_prefixes",
+      "passed": true,
+      "error": "",
+      "tokens": 255
+    },
+    {
+      "task_id": "HumanEval/15",
+      "entry_point": "string_sequence",
+      "passed": true,
+      "error": "",
+      "tokens": 265
+    },
+    {
+      "task_id": "HumanEval/16",
+      "entry_point": "count_distinct_characters",
+      "passed": true,
+      "error": "",
+      "tokens": 251
+    },
+    {
+      "task_id": "HumanEval/17",
+      "entry_point": "parse_music",
+      "passed": true,
+      "error": "",
+      "tokens": 399
+    },
+    {
+      "task_id": "HumanEval/18",
+      "entry_point": "how_many_times",
+      "passed": true,
+      "error": "",
+      "tokens": 332
+    },
+    {
+      "task_id": "HumanEval/19",
+      "entry_point": "sort_numbers",
+      "passed": true,
+      "error": "",
+      "tokens": 443
+    },
+    {
+      "task_id": "HumanEval/20",
+      "entry_point": "find_closest_elements",
+      "passed": true,
+      "error": "",
+      "tokens": 454
+    },
+    {
+      "task_id": "HumanEval/21",
+      "entry_point": "rescale_to_unit",
+      "passed": true,
+      "error": "",
+      "tokens": 350
+    },
+    {
+      "task_id": "HumanEval/22",
+      "entry_point": "filter_integers",
+      "passed": true,
+      "error": "",
+      "tokens": 288
+    },
+    {
+      "task_id": "HumanEval/23",
+      "entry_point": "strlen",
+      "passed": true,
+      "error": "",
+      "tokens": 215
+    },
+    {
+      "task_id": "HumanEval/24",
+      "entry_point": "largest_divisor",
+      "passed": false,
+      "error": "  File \"C:\\Users\\kathe\\AppData\\Local\\Temp\\tmp_c59hd5m.py\", line 9\n    if n % i == 0:\n    ^^\nIndentationError: expected an indented block after 'for' statement on line 8\n",
+      "tokens": 253
+    },
+    {
+      "task_id": "HumanEval/25",
+      "entry_point": "factorize",
+      "passed": false,
+      "error": "  File \"C:\\Users\\kathe\\AppData\\Local\\Temp\\tmp28mgv5dy.py\", line 18\n    while n % d == 0:\n    ^^^^^\nIndentationError: expected an indented block after 'while' statement on line 17\n",
+      "tokens": 371
+    },
+    {
+      "task_id": "HumanEval/26",
+      "entry_point": "remove_duplicates",
+      "passed": true,
+      "error": "",
+      "tokens": 289
+    },
+    {
+      "task_id": "HumanEval/27",
+      "entry_point": "flip_case",
+      "passed": true,
+      "error": "",
+      "tokens": 229
+    },
+    {
+      "task_id": "HumanEval/28",
+      "entry_point": "concatenate",
+      "passed": true,
+      "error": "",
+      "tokens": 243
+    },
+    {
+      "task_id": "HumanEval/29",
+      "entry_point": "filter_by_prefix",
+      "passed": true,
+      "error": "",
+      "tokens": 290
+    },
+    {
+      "task_id": "HumanEval/30",
+      "entry_point": "get_positive",
+      "passed": true,
+      "error": "",
+      "tokens": 302
+    },
+    {
+      "task_id": "HumanEval/31",
+      "entry_point": "is_prime",
+      "passed": false,
+      "error": "  File \"C:\\Users\\kathe\\AppData\\Local\\Temp\\tmputz3876t.py\", line 21\n    return False\n    ^^^^^^\nIndentationError: expected an indented block after 'if' statement on line 20\n",
+      "tokens": 358
+    },
+    {
+      "task_id": "HumanEval/32",
+      "entry_point": "find_zero",
+      "passed": false,
+      "error": "  File \"C:\\Users\\kathe\\AppData\\Local\\Temp\\tmphb4yzfa2.py\", line 31\n    fx = poly(xs, x)\n    ^^\nIndentationError: expected an indented block after 'for' statement on line 30\n",
+      "tokens": 714
+    },
+    {
+      "task_id": "HumanEval/33",
+      "entry_point": "sort_third",
+      "passed": false,
+      "error": "  File \"C:\\Users\\kathe\\AppData\\Local\\Temp\\tmp46o4_l8e.py\", line 22\n    if i % 3 == 0:\n    ^^\nIndentationError: expected an indented block after 'for' statement on line 21\n",
+      "tokens": 445
+    },
+    {
+      "task_id": "HumanEval/34",
+      "entry_point": "unique",
+      "passed": true,
+      "error": "",
+      "tokens": 249
+    },
+    {
+      "task_id": "HumanEval/35",
+      "entry_point": "max_element",
+      "passed": false,
+      "error": "  File \"C:\\Users\\kathe\\AppData\\Local\\Temp\\tmpowz7pbia.py\", line 11\n    return None\n    ^^^^^^\nIndentationError: expected an indented block after 'if' statement on line 10\n",
+      "tokens": 267
+    },
+    {
+      "task_id": "HumanEval/36",
+      "entry_point": "fizz_buzz",
+      "passed": false,
+      "error": "  File \"C:\\Users\\kathe\\AppData\\Local\\Temp\\tmpxjswm2fo.py\", line 14\n    if i % 11 == 0 or i % 13 == 0:\n    ^^\nIndentationError: expected an indented block after 'for' statement on line 13\n",
+      "tokens": 303
+    },
+    {
+      "task_id": "HumanEval/37",
+      "entry_point": "sort_even",
+      "passed": false,
+      "error": "  File \"C:\\Users\\kathe\\AppData\\Local\\Temp\\tmpf7p9e4mo.py\", line 22\n    if i % 2 == 0:\n    ^^\nIndentationError: expected an indented block after 'for' statement on line 21\n",
+      "tokens": 426
+    },
+    {
+      "task_id": "HumanEval/38",
+      "entry_point": "decode_cyclic",
+      "passed": true,
+      "error": "",
+      "tokens": 461
+    },
+    {
+      "task_id": "HumanEval/39",
+      "entry_point": "prime_fib",
+      "passed": false,
+      "error": "  File \"C:\\Users\\kathe\\AppData\\Local\\Temp\\tmp64dct0bp.py\", line 31\n    a, b = b, a + b\n    ^\nIndentationError: expected an indented block after 'while' statement on line 30\n",
+      "tokens": 414
+    },
+    {
+      "task_id": "HumanEval/40",
+      "entry_point": "triples_sum_to_zero",
+      "passed": true,
+      "error": "",
+      "tokens": 451
+    },
+    {
+      "task_id": "HumanEval/41",
+      "entry_point": "car_race_collision",
+      "passed": true,
+      "error": "",
+      "tokens": 336
+    },
+    {
+      "task_id": "HumanEval/42",
+      "entry_point": "incr_list",
+      "passed": true,
+      "error": "",
+      "tokens": 299
+    },
+    {
+      "task_id": "HumanEval/43",
+      "entry_point": "pairs_sum_to_zero",
+      "passed": true,
+      "error": "",
+      "tokens": 388
+    },
+    {
+      "task_id": "HumanEval/44",
+      "entry_point": "change_base",
+      "passed": false,
+      "error": "  File \"C:\\Users\\kathe\\AppData\\Local\\Temp\\tmptd1l59b4.py\", line 15\n    return '0'\n    ^^^^^^\nIndentationError: expected an indented block after 'if' statement on line 14\n",
+      "tokens": 322
+    },
+    {
+      "task_id": "HumanEval/45",
+      "entry_point": "triangle_area",
+      "passed": true,
+      "error": "",
+      "tokens": 225
+    },
+    {
+      "task_id": "HumanEval/46",
+      "entry_point": "fib4",
+      "passed": false,
+      "error": "  File \"C:\\Users\\kathe\\AppData\\Local\\Temp\\tmpbun8igyw.py\", line 19\n    return 0\n    ^^^^^^\nIndentationError: expected an indented block after 'if' statement on line 18\n",
+      "tokens": 485
+    },
+    {
+      "task_id": "HumanEval/47",
+      "entry_point": "median",
+      "passed": true,
+      "error": "",
+      "tokens": 320
+    },
+    {
+      "task_id": "HumanEval/48",
+      "entry_point": "is_palindrome",
+      "passed": true,
+      "error": "",
+      "tokens": 273
+    },
+    {
+      "task_id": "HumanEval/49",
+      "entry_point": "modp",
+      "passed": true,
+      "error": "",
+      "tokens": 284
+    },
+    {
+      "task_id": "HumanEval/50",
+      "entry_point": "decode_shift",
+      "passed": true,
+      "error": "",
+      "tokens": 308
+    },
+    {
+      "task_id": "HumanEval/51",
+      "entry_point": "remove_vowels",
+      "passed": true,
+      "error": "",
+      "tokens": 343
+    },
+    {
+      "task_id": "HumanEval/52",
+      "entry_point": "below_threshold",
+      "passed": true,
+      "error": "",
+      "tokens": 263
+    },
+    {
+      "task_id": "HumanEval/53",
+      "entry_point": "add",
+      "passed": true,
+      "error": "",
+      "tokens": 224
+    },
+    {
+      "task_id": "HumanEval/54",
+      "entry_point": "same_chars",
+      "passed": true,
+      "error": "",
+      "tokens": 362
+    },
+    {
+      "task_id": "HumanEval/55",
+      "entry_point": "fib",
+      "passed": false,
+      "error": "  File \"C:\\Users\\kathe\\AppData\\Local\\Temp\\tmp5e8ohg0x.py\", line 13\n    return 0\n    ^^^^^^\nIndentationError: expected an indented block after 'if' statement on line 12\n",
+      "tokens": 277
+    },
+    {
+      "task_id": "HumanEval/56",
+      "entry_point": "correct_bracketing",
+      "passed": true,
+      "error": "",
+      "tokens": 324
+    },
+    {
+      "task_id": "HumanEval/57",
+      "entry_point": "monotonic",
+      "passed": true,
+      "error": "",
+      "tokens": 375
+    },
+    {
+      "task_id": "HumanEval/58",
+      "entry_point": "common",
+      "passed": true,
+      "error": "",
+      "tokens": 302
+    },
+    {
+      "task_id": "HumanEval/59",
+      "entry_point": "largest_prime_factor",
+      "passed": true,
+      "error": "",
+      "tokens": 383
+    },
+    {
+      "task_id": "HumanEval/60",
+      "entry_point": "sum_to_n",
+      "passed": true,
+      "error": "",
+      "tokens": 290
+    },
+    {
+      "task_id": "HumanEval/61",
+      "entry_point": "correct_bracketing",
+      "passed": true,
+      "error": "",
+      "tokens": 322
+    },
+    {
+      "task_id": "HumanEval/62",
+      "entry_point": "derivative",
+      "passed": true,
+      "error": "",
+      "tokens": 304
+    },
+    {
+      "task_id": "HumanEval/63",
+      "entry_point": "fibfib",
+      "passed": false,
+      "error": "  File \"C:\\Users\\kathe\\AppData\\Local\\Temp\\tmplcgbkg0g.py\", line 18\n    return 0\n    ^^^^^^\nIndentationError: expected an indented block after 'if' statement on line 17\n",
+      "tokens": 422
+    },
+    {
+      "task_id": "HumanEval/64",
+      "entry_point": "vowels_count",
+      "passed": true,
+      "error": "",
+      "tokens": 397
+    },
+    {
+      "task_id": "HumanEval/65",
+      "entry_point": "circular_shift",
+      "passed": false,
+      "error": "Traceback (most recent call last):\n  File \"C:\\Users\\kathe\\AppData\\Local\\Temp\\tmp06hf3d66.py\", line 39, in <module>\n    check(circular_shift)\n    ~~~~~^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\kathe\\AppData\\Lo",
+      "tokens": 371
+    },
+    {
+      "task_id": "HumanEval/66",
+      "entry_point": "digitSum",
+      "passed": false,
+      "error": "  File \"C:\\Users\\kathe\\AppData\\Local\\Temp\\tmpuwub49aj.py\", line 17\n    if char.isupper():\n    ^^\nIndentationError: expected an indented block after 'for' statement on line 16\n",
+      "tokens": 317
+    },
+    {
+      "task_id": "HumanEval/67",
+      "entry_point": "fruit_distribution",
+      "passed": true,
+      "error": "",
+      "tokens": 472
+    },
+    {
+      "task_id": "HumanEval/68",
+      "entry_point": "pluck",
+      "passed": true,
+      "error": "",
+      "tokens": 633
+    },
+    {
+      "task_id": "HumanEval/69",
+      "entry_point": "search",
+      "passed": false,
+      "error": "  File \"C:\\Users\\kathe\\AppData\\Local\\Temp\\tmp7izk9fpl.py\", line 19\n    if num > 0 and freq[num] >= num:\n    ^^\nIndentationError: expected an indented block after 'for' statement on line 18\n",
+      "tokens": 390
+    },
+    {
+      "task_id": "HumanEval/70",
+      "entry_point": "strange_sort_list",
+      "passed": true,
+      "error": "",
+      "tokens": 397
+    },
+    {
+      "task_id": "HumanEval/71",
+      "entry_point": "triangle_area",
+      "passed": false,
+      "error": "  File \"C:\\Users\\kathe\\AppData\\Local\\Temp\\tmpu2ped7tn.py\", line 15\n    return -1\n    ^^^^^^\nIndentationError: expected an indented block after 'if' statement on line 14\n",
+      "tokens": 392
+    },
+    {
+      "task_id": "HumanEval/72",
+      "entry_point": "will_it_fly",
+      "passed": true,
+      "error": "",
+      "tokens": 439
+    },
+    {
+      "task_id": "HumanEval/73",
+      "entry_point": "smallest_change",
+      "passed": true,
+      "error": "",
+      "tokens": 395
+    },
+    {
+      "task_id": "HumanEval/74",
+      "entry_point": "total_match",
+      "passed": true,
+      "error": "",
+      "tokens": 451
+    },
+    {
+      "task_id": "HumanEval/75",
+      "entry_point": "is_multiply_prime",
+      "passed": false,
+      "error": "  File \"C:\\Users\\kathe\\AppData\\Local\\Temp\\tmpnwlta1w6.py\", line 24\n    while temp % i == 0 and is_prime(i):\n    ^^^^^\nIndentationError: expected an indented block after 'for' statement on line 23\n",
+      "tokens": 424
+    },
+    {
+      "task_id": "HumanEval/76",
+      "entry_point": "is_simple_power",
+      "passed": false,
+      "error": "  File \"C:\\Users\\kathe\\AppData\\Local\\Temp\\tmpukpygorb.py\", line 15\n    return x == 1\n    ^^^^^^\nIndentationError: expected an indented block after 'if' statement on line 14\n",
+      "tokens": 390
+    },
+    {
+      "task_id": "HumanEval/77",
+      "entry_point": "iscube",
+      "passed": false,
+      "error": "  File \"C:\\Users\\kathe\\AppData\\Local\\Temp\\tmpjfmsfqy1.py\", line 16\n    return True\n    ^^^^^^\nIndentationError: expected an indented block after 'if' statement on line 15\n",
+      "tokens": 477
+    },
+    {
+      "task_id": "HumanEval/78",
+      "entry_point": "hex_key",
+      "passed": true,
+      "error": "",
+      "tokens": 550
+    },
+    {
+      "task_id": "HumanEval/79",
+      "entry_point": "decimal_to_binary",
+      "passed": true,
+      "error": "",
+      "tokens": 335
+    },
+    {
+      "task_id": "HumanEval/80",
+      "entry_point": "is_happy",
+      "passed": false,
+      "error": "  File \"C:\\Users\\kathe\\AppData\\Local\\Temp\\tmprsu7qqsg.py\", line 15\n    return False\n    ^^^^^^\nIndentationError: expected an indented block after 'if' statement on line 14\n",
+      "tokens": 374
+    },
+    {
+      "task_id": "HumanEval/81",
+      "entry_point": "numerical_letter_grade",
+      "passed": false,
+      "error": "  File \"C:\\Users\\kathe\\AppData\\Local\\Temp\\tmpjnur8kov.py\", line 28\n    return []\n    ^^^^^^\nIndentationError: expected an indented block after 'if' statement on line 27\n",
+      "tokens": 767
+    },
+    {
+      "task_id": "HumanEval/82",
+      "entry_point": "prime_length",
+      "passed": false,
+      "error": "Traceback (most recent call last):\n  File \"C:\\Users\\kathe\\AppData\\Local\\Temp\\tmpshi7xrev.py\", line 48, in <module>\n    check(prime_length)\n    ~~~~~^^^^^^^^^^^^^^\n  File \"C:\\Users\\kathe\\AppData\\Local\\",
+      "tokens": 354
+    },
+    {
+      "task_id": "HumanEval/83",
+      "entry_point": "starts_one_ends",
+      "passed": false,
+      "error": "  File \"C:\\Users\\kathe\\AppData\\Local\\Temp\\tmp8dqqhm7d.py\", line 8\n    return 1\n    ^^^^^^\nIndentationError: expected an indented block after 'if' statement on line 7\n",
+      "tokens": 421
+    },
+    {
+      "task_id": "HumanEval/84",
+      "entry_point": "solve",
+      "passed": true,
+      "error": "",
+      "tokens": 347
+    },
+    {
+      "task_id": "HumanEval/85",
+      "entry_point": "add",
+      "passed": true,
+      "error": "",
+      "tokens": 260
+    },
+    {
+      "task_id": "HumanEval/86",
+      "entry_point": "anti_shuffle",
+      "passed": true,
+      "error": "",
+      "tokens": 336
+    },
+    {
+      "task_id": "HumanEval/87",
+      "entry_point": "get_row",
+      "passed": true,
+      "error": "",
+      "tokens": 547
+    },
+    {
+      "task_id": "HumanEval/88",
+      "entry_point": "sort_array",
+      "passed": false,
+      "error": "  File \"C:\\Users\\kathe\\AppData\\Local\\Temp\\tmposx12u3y.py\", line 18\n    return []\n    ^^^^^^\nIndentationError: expected an indented block after 'if' statement on line 17\n",
+      "tokens": 463
+    },
+    {
+      "task_id": "HumanEval/89",
+      "entry_point": "encrypt",
+      "passed": true,
+      "error": "",
+      "tokens": 435
+    },
+    {
+      "task_id": "HumanEval/90",
+      "entry_point": "next_smallest",
+      "passed": false,
+      "error": "  File \"C:\\Users\\kathe\\AppData\\Local\\Temp\\tmplsqfwkam.py\", line 14\n    return None\n    ^^^^^^\nIndentationError: expected an indented block after 'if' statement on line 13\n",
+      "tokens": 348
+    },
+    {
+      "task_id": "HumanEval/91",
+      "entry_point": "is_bored",
+      "passed": false,
+      "error": "  File \"C:\\Users\\kathe\\AppData\\Local\\Temp\\tmpcuyheyau.py\", line 19\n    stripped = sentence.strip()\n    ^^^^^^^^\nIndentationError: expected an indented block after 'for' statement on line 18\n",
+      "tokens": 355
+    },
+    {
+      "task_id": "HumanEval/92",
+      "entry_point": "any_int",
+      "passed": false,
+      "error": "  File \"C:\\Users\\kathe\\AppData\\Local\\Temp\\tmpcwj5a5tq.py\", line 22\n    return False\n    ^^^^^^\nIndentationError: expected an indented block after 'if' statement on line 21\n",
+      "tokens": 413
+    },
+    {
+      "task_id": "HumanEval/93",
+      "entry_point": "encode",
+      "passed": false,
+      "error": "Traceback (most recent call last):\n  File \"C:\\Users\\kathe\\AppData\\Local\\Temp\\tmpcnymr6hb.py\", line 43, in <module>\n    check(encode)\n    ~~~~~^^^^^^^^\n  File \"C:\\Users\\kathe\\AppData\\Local\\Temp\\tmpcnym",
+      "tokens": 467
+    },
+    {
+      "task_id": "HumanEval/94",
+      "entry_point": "skjkasdkd",
+      "passed": false,
+      "error": "  File \"C:\\Users\\kathe\\AppData\\Local\\Temp\\tmp5lmj6_pi.py\", line 28\n    if is_prime(num) and num > largest_prime:\n    ^^\nIndentationError: expected an indented block after 'for' statement on line 27\n",
+      "tokens": 613
+    },
+    {
+      "task_id": "HumanEval/95",
+      "entry_point": "check_dict_case",
+      "passed": true,
+      "error": "",
+      "tokens": 482
+    },
+    {
+      "task_id": "HumanEval/96",
+      "entry_point": "count_up_to",
+      "passed": false,
+      "error": "  File \"C:\\Users\\kathe\\AppData\\Local\\Temp\\tmp0uu049ra.py\", line 26\n    if is_prime(i):\n    ^^\nIndentationError: expected an indented block after 'for' statement on line 25\n",
+      "tokens": 462
+    },
+    {
+      "task_id": "HumanEval/97",
+      "entry_point": "multiply",
+      "passed": true,
+      "error": "",
+      "tokens": 294
+    },
+    {
+      "task_id": "HumanEval/98",
+      "entry_point": "count_upper",
+      "passed": true,
+      "error": "",
+      "tokens": 298
+    },
+    {
+      "task_id": "HumanEval/99",
+      "entry_point": "closest_integer",
+      "passed": false,
+      "error": "  File \"C:\\Users\\kathe\\AppData\\Local\\Temp\\tmprznqyv_8.py\", line 24\n    return int(num.quantize(Decimal('1'), rounding=ROUND_HALF_UP))\n    ^^^^^^\nIndentationError: expected an indented block after 'if'",
+      "tokens": 420
+    },
+    {
+      "task_id": "HumanEval/100",
+      "entry_point": "make_a_pile",
+      "passed": true,
+      "error": "",
+      "tokens": 346
+    },
+    {
+      "task_id": "HumanEval/101",
+      "entry_point": "words_string",
+      "passed": true,
+      "error": "",
+      "tokens": 312
+    },
+    {
+      "task_id": "HumanEval/102",
+      "entry_point": "choose_num",
+      "passed": false,
+      "error": "  File \"C:\\Users\\kathe\\AppData\\Local\\Temp\\tmp5hqkufh0.py\", line 12\n    return -1\n    ^^^^^^\nIndentationError: expected an indented block after 'if' statement on line 11\n",
+      "tokens": 338
+    },
+    {
+      "task_id": "HumanEval/103",
+      "entry_point": "rounded_avg",
+      "passed": false,
+      "error": "  File \"C:\\Users\\kathe\\AppData\\Local\\Temp\\tmp553xwsec.py\", line 14\n    return -1\n    ^^^^^^\nIndentationError: expected an indented block after 'if' statement on line 13\n",
+      "tokens": 353
+    },
+    {
+      "task_id": "HumanEval/104",
+      "entry_point": "unique_digits",
+      "passed": true,
+      "error": "",
+      "tokens": 313
+    },
+    {
+      "task_id": "HumanEval/105",
+      "entry_point": "by_length",
+      "passed": true,
+      "error": "",
+      "tokens": 622
+    },
+    {
+      "task_id": "HumanEval/106",
+      "entry_point": "f",
+      "passed": false,
+      "error": "  File \"C:\\Users\\kathe\\AppData\\Local\\Temp\\tmppg030e_l.py\", line 13\n    if i % 2 == 0:\n    ^^\nIndentationError: expected an indented block after 'for' statement on line 12\n",
+      "tokens": 412
+    },
+    {
+      "task_id": "HumanEval/107",
+      "entry_point": "even_odd_palindrome",
+      "passed": false,
+      "error": "  File \"C:\\Users\\kathe\\AppData\\Local\\Temp\\tmptgqhoqnh.py\", line 32\n    if is_palindrome(i):\n    ^^\nIndentationError: expected an indented block after 'for' statement on line 31\n",
+      "tokens": 497
+    },
+    {
+      "task_id": "HumanEval/108",
+      "entry_point": "count_nums",
+      "passed": true,
+      "error": "",
+      "tokens": 472
+    },
+    {
+      "task_id": "HumanEval/109",
+      "entry_point": "move_one_ball",
+      "passed": true,
+      "error": "",
+      "tokens": 661
+    },
+    {
+      "task_id": "HumanEval/110",
+      "entry_point": "exchange",
+      "passed": false,
+      "error": "  File \"C:\\Users\\kathe\\AppData\\Local\\Temp\\tmpkvxdptwl.py\", line 23\n    return \"YES\"\n    ^^^^^^\nIndentationError: expected an indented block after 'if' statement on line 22\n",
+      "tokens": 513
+    },
+    {
+      "task_id": "HumanEval/111",
+      "entry_point": "histogram",
+      "passed": true,
+      "error": "",
+      "tokens": 461
+    },
+    {
+      "task_id": "HumanEval/112",
+      "entry_point": "reverse_delete",
+      "passed": true,
+      "error": "",
+      "tokens": 405
+    },
+    {
+      "task_id": "HumanEval/113",
+      "entry_point": "odd_count",
+      "passed": true,
+      "error": "",
+      "tokens": 445
+    },
+    {
+      "task_id": "HumanEval/114",
+      "entry_point": "minSubArraySum",
+      "passed": true,
+      "error": "",
+      "tokens": 337
+    },
+    {
+      "task_id": "HumanEval/115",
+      "entry_point": "max_fill",
+      "passed": false,
+      "error": "Traceback (most recent call last):\n  File \"C:\\Users\\kathe\\AppData\\Local\\Temp\\tmpjak625p7.py\", line 56, in <module>\n    check(max_fill)\n    ~~~~~^^^^^^^^^^\n  File \"C:\\Users\\kathe\\AppData\\Local\\Temp\\tmp",
+      "tokens": 552
+    },
+    {
+      "task_id": "HumanEval/116",
+      "entry_point": "sort_array",
+      "passed": true,
+      "error": "",
+      "tokens": 372
+    },
+    {
+      "task_id": "HumanEval/117",
+      "entry_point": "select_words",
+      "passed": true,
+      "error": "",
+      "tokens": 479
+    },
+    {
+      "task_id": "HumanEval/118",
+      "entry_point": "get_closest_vowel",
+      "passed": true,
+      "error": "",
+      "tokens": 537
+    },
+    {
+      "task_id": "HumanEval/119",
+      "entry_point": "match_parens",
+      "passed": false,
+      "error": "  File \"C:\\Users\\kathe\\AppData\\Local\\Temp\\tmp2cy3hwuo.py\", line 29\n    return 'Yes'\n    ^^^^^^\nIndentationError: expected an indented block after 'if' statement on line 28\n",
+      "tokens": 474
+    },
+    {
+      "task_id": "HumanEval/120",
+      "entry_point": "maximum",
+      "passed": true,
+      "error": "",
+      "tokens": 415
+    },
+    {
+      "task_id": "HumanEval/121",
+      "entry_point": "solution",
+      "passed": true,
+      "error": "",
+      "tokens": 304
+    },
+    {
+      "task_id": "HumanEval/122",
+      "entry_point": "add_elements",
+      "passed": false,
+      "error": "  File \"C:\\Users\\kathe\\AppData\\Local\\Temp\\tmp2w30uqce.py\", line 18\n    if -100 <= arr[i] <= 99:\n    ^^\nIndentationError: expected an indented block after 'for' statement on line 17\n",
+      "tokens": 345
+    },
+    {
+      "task_id": "HumanEval/123",
+      "entry_point": "get_odd_collatz",
+      "passed": true,
+      "error": "",
+      "tokens": 531
+    },
+    {
+      "task_id": "HumanEval/124",
+      "entry_point": "valid_date",
+      "passed": true,
+      "error": "",
+      "tokens": 794
+    },
+    {
+      "task_id": "HumanEval/125",
+      "entry_point": "split_words",
+      "passed": false,
+      "error": "  File \"C:\\Users\\kathe\\AppData\\Local\\Temp\\tmpu1yu_3nj.py\", line 13\n    return txt.split(' ')\n    ^^^^^^\nIndentationError: expected an indented block after 'if' statement on line 12\n",
+      "tokens": 420
+    },
+    {
+      "task_id": "HumanEval/126",
+      "entry_point": "is_sorted",
+      "passed": false,
+      "error": "  File \"C:\\Users\\kathe\\AppData\\Local\\Temp\\tmpy2tlb530.py\", line 22\n    return False\n    ^^^^^^\nIndentationError: expected an indented block after 'if' statement on line 21\n",
+      "tokens": 528
+    },
+    {
+      "task_id": "HumanEval/127",
+      "entry_point": "intersection",
+      "passed": false,
+      "error": "  File \"C:\\Users\\kathe\\AppData\\Local\\Temp\\tmppl6s8g_y.py\", line 39\n    return \"NO\"\n    ^^^^^^\nIndentationError: expected an indented block after 'if' statement on line 38\n",
+      "tokens": 628
+    },
+    {
+      "task_id": "HumanEval/128",
+      "entry_point": "prod_signs",
+      "passed": false,
+      "error": "  File \"C:\\Users\\kathe\\AppData\\Local\\Temp\\tmpqhh7sg3f.py\", line 15\n    return None\n    ^^^^^^\nIndentationError: expected an indented block after 'if' statement on line 14\n",
+      "tokens": 393
+    },
+    {
+      "task_id": "HumanEval/129",
+      "entry_point": "minPath",
+      "passed": true,
+      "error": "",
+      "tokens": 1409
+    },
+    {
+      "task_id": "HumanEval/130",
+      "entry_point": "tri",
+      "passed": false,
+      "error": "Traceback (most recent call last):\n  File \"C:\\Users\\kathe\\AppData\\Local\\Temp\\tmphtgdxkz_.py\", line 52, in <module>\n    check(tri)\n    ~~~~~^^^^^\n  File \"C:\\Users\\kathe\\AppData\\Local\\Temp\\tmphtgdxkz_.p",
+      "tokens": 575
+    },
+    {
+      "task_id": "HumanEval/131",
+      "entry_point": "digits",
+      "passed": true,
+      "error": "",
+      "tokens": 309
+    },
+    {
+      "task_id": "HumanEval/132",
+      "entry_point": "is_nested",
+      "passed": false,
+      "error": "Traceback (most recent call last):\n  File \"C:\\Users\\kathe\\AppData\\Local\\Temp\\tmp4w1_yuki.py\", line 50, in <module>\n    check(is_nested)\n    ~~~~~^^^^^^^^^^^\n  File \"C:\\Users\\kathe\\AppData\\Local\\Temp\\t",
+      "tokens": 400
+    },
+    {
+      "task_id": "HumanEval/133",
+      "entry_point": "sum_squares",
+      "passed": true,
+      "error": "",
+      "tokens": 351
+    },
+    {
+      "task_id": "HumanEval/134",
+      "entry_point": "check_if_last_char_is_a_letter",
+      "passed": true,
+      "error": "",
+      "tokens": 424
+    },
+    {
+      "task_id": "HumanEval/135",
+      "entry_point": "can_arrange",
+      "passed": false,
+      "error": "  File \"C:\\Users\\kathe\\AppData\\Local\\Temp\\tmpqkd__jh9.py\", line 13\n    if arr[i] < arr[i - 1]:\n    ^^\nIndentationError: expected an indented block after 'for' statement on line 12\n",
+      "tokens": 447
+    },
+    {
+      "task_id": "HumanEval/136",
+      "entry_point": "largest_smallest_integers",
+      "passed": true,
+      "error": "",
+      "tokens": 400
+    },
+    {
+      "task_id": "HumanEval/137",
+      "entry_point": "compare_one",
+      "passed": true,
+      "error": "",
+      "tokens": 471
+    },
+    {
+      "task_id": "HumanEval/138",
+      "entry_point": "is_equal_to_sum_even",
+      "passed": false,
+      "error": "  File \"C:\\Users\\kathe\\AppData\\Local\\Temp\\tmpq6fc87r8.py\", line 10\n    return False\n    ^^^^^^\nIndentationError: expected an indented block after 'if' statement on line 9\n",
+      "tokens": 284
+    },
+    {
+      "task_id": "HumanEval/139",
+      "entry_point": "special_factorial",
+      "passed": false,
+      "error": "  File \"C:\\Users\\kathe\\AppData\\Local\\Temp\\tmpoelog09v.py\", line 16\n    factorial = 1\n    ^^^^^^^^^\nIndentationError: expected an indented block after 'for' statement on line 15\n",
+      "tokens": 318
+    },
+    {
+      "task_id": "HumanEval/140",
+      "entry_point": "fix_spaces",
+      "passed": true,
+      "error": "",
+      "tokens": 449
+    },
+    {
+      "task_id": "HumanEval/141",
+      "entry_point": "file_name_check",
+      "passed": true,
+      "error": "",
+      "tokens": 605
+    },
+    {
+      "task_id": "HumanEval/142",
+      "entry_point": "sum_squares",
+      "passed": true,
+      "error": "",
+      "tokens": 414
+    },
+    {
+      "task_id": "HumanEval/143",
+      "entry_point": "words_in_sentence",
+      "passed": false,
+      "error": "Traceback (most recent call last):\n  File \"C:\\Users\\kathe\\AppData\\Local\\Temp\\tmpem4o67mv.py\", line 52, in <module>\n    check(words_in_sentence)\n    ~~~~~^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\kathe\\AppD",
+      "tokens": 455
+    },
+    {
+      "task_id": "HumanEval/144",
+      "entry_point": "simplify",
+      "passed": true,
+      "error": "",
+      "tokens": 414
+    },
+    {
+      "task_id": "HumanEval/145",
+      "entry_point": "order_by_points",
+      "passed": false,
+      "error": "  File \"C:\\Users\\kathe\\AppData\\Local\\Temp\\tmp5mqsm51h.py\", line 28\n    But this doesn't handle the tie-breaking by original index. Let me fix:\n                  ^\nSyntaxError: unterminated string lite",
+      "tokens": 551
+    },
+    {
+      "task_id": "HumanEval/146",
+      "entry_point": "specialFilter",
+      "passed": true,
+      "error": "",
+      "tokens": 342
+    },
+    {
+      "task_id": "HumanEval/147",
+      "entry_point": "get_max_triples",
+      "passed": false,
+      "error": "  File \"C:\\Users\\kathe\\AppData\\Local\\Temp\\tmpwwrd89aj.py\", line 23\n    val = i * i - i + 1\n    ^^^\nIndentationError: expected an indented block after 'for' statement on line 22\n",
+      "tokens": 795
+    },
+    {
+      "task_id": "HumanEval/148",
+      "entry_point": "bf",
+      "passed": true,
+      "error": "",
+      "tokens": 562
+    },
+    {
+      "task_id": "HumanEval/149",
+      "entry_point": "sorted_list_sum",
+      "passed": true,
+      "error": "",
+      "tokens": 411
+    },
+    {
+      "task_id": "HumanEval/150",
+      "entry_point": "x_or_y",
+      "passed": false,
+      "error": "Traceback (most recent call last):\n  File \"C:\\Users\\kathe\\AppData\\Local\\Temp\\tmprgt5fj4t.py\", line 43, in <module>\n    check(x_or_y)\n    ~~~~~^^^^^^^^\n  File \"C:\\Users\\kathe\\AppData\\Local\\Temp\\tmprgt5",
+      "tokens": 365
+    },
+    {
+      "task_id": "HumanEval/151",
+      "entry_point": "double_the_difference",
+      "passed": true,
+      "error": "",
+      "tokens": 368
+    },
+    {
+      "task_id": "HumanEval/152",
+      "entry_point": "compare",
+      "passed": true,
+      "error": "",
+      "tokens": 436
+    },
+    {
+      "task_id": "HumanEval/153",
+      "entry_point": "Strongest_Extension",
+      "passed": true,
+      "error": "",
+      "tokens": 570
+    },
+    {
+      "task_id": "HumanEval/154",
+      "entry_point": "cycpattern_check",
+      "passed": true,
+      "error": "",
+      "tokens": 428
+    },
+    {
+      "task_id": "HumanEval/155",
+      "entry_point": "even_odd_count",
+      "passed": true,
+      "error": "",
+      "tokens": 316
+    },
+    {
+      "task_id": "HumanEval/156",
+      "entry_point": "int_to_mini_roman",
+      "passed": false,
+      "error": "  File \"C:\\Users\\kathe\\AppData\\Local\\Temp\\tmpzvfgl01a.py\", line 28\n    for _ in range(number // val[i]):\n    ^^^\nIndentationError: expected an indented block after 'while' statement on line 27\n",
+      "tokens": 453
+    },
+    {
+      "task_id": "HumanEval/157",
+      "entry_point": "right_angle_triangle",
+      "passed": true,
+      "error": "",
+      "tokens": 331
+    },
+    {
+      "task_id": "HumanEval/158",
+      "entry_point": "find_max",
+      "passed": true,
+      "error": "",
+      "tokens": 397
+    },
+    {
+      "task_id": "HumanEval/159",
+      "entry_point": "eat",
+      "passed": true,
+      "error": "",
+      "tokens": 517
+    },
+    {
+      "task_id": "HumanEval/160",
+      "entry_point": "do_algebra",
+      "passed": false,
+      "error": "  File \"C:\\Users\\kathe\\AppData\\Local\\Temp\\tmp6ghhls40.py\", line 29\n    if operator[i] == '+':\n    ^^\nIndentationError: expected an indented block after 'for' statement on line 28\n",
+      "tokens": 539
+    },
+    {
+      "task_id": "HumanEval/161",
+      "entry_point": "solve",
+      "passed": false,
+      "error": "  File \"C:\\Users\\kathe\\AppData\\Local\\Temp\\tmpi6qygt4h.py\", line 18\n    return s[::-1]\n    ^^^^^^\nIndentationError: expected an indented block after 'if' statement on line 16\n",
+      "tokens": 381
+    },
+    {
+      "task_id": "HumanEval/162",
+      "entry_point": "string_to_md5",
+      "passed": true,
+      "error": "",
+      "tokens": 287
+    },
+    {
+      "task_id": "HumanEval/163",
+      "entry_point": "generate_integers",
+      "passed": false,
+      "error": "  File \"C:\\Users\\kathe\\AppData\\Local\\Temp\\tmp27iwfl13.py\", line 14\n    a, b = b, a\n    ^\nIndentationError: expected an indented block after 'if' statement on line 13\n",
+      "tokens": 342
+    }
+  ]
+}

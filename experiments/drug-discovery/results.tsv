@@ -1,0 +1,83 @@
+experiment	smiles	composite_score	qed	mw	logp	lipinski	pains	novel	description
+1	CC(=O)Oc1ccccc1C(=O)O	0.7001	0.5501	180.2	1.31	PASS	CLEAN	known	Aspirin baseline
+1	CC(=O)Nc1ccc(O)cc1	0.745	0.595	151.2	1.35	PASS	CLEAN	-	Acetaminophen baseline
+1	Cn1c(=O)c2c(ncn2C)n(C)c1=O	0.6885	0.5385	194.2	-1.03	PASS	CLEAN	-	Caffeine baseline
+1	CC(C)Cc1ccc(C(C)C(=O)O)cc1	0.9716	0.8216	206.3	3.07	PASS	CLEAN	known	Ibuprofen — new best!
+1	CC12CCC(=O)C=C1CCC1C2CCC2(C)C(O)CCC12	0.8842	0.7342	288.4	3.88	PASS	CLEAN	known	Testosterone baseline
+2	CC(C)Cc1ccc(C(C)c2nnc(O)o2)cc1	1.0	0.9	246.3	3.13	PASS	CLEAN	known	Oxadiazole ibuprofen — QED 0.90, best QED this round
+2	CC(C)Cc1ccc(C(C)C(=O)O)cc1C(F)(F)F	1.0	0.8974	274.3	4.09	PASS	CLEAN	known	CF3-ibuprofen
+2	CNS(=O)(=O)C(C)c1ccc(CC(C)C)cc1	1.0	0.8784	255.4	2.5	PASS	CLEAN	known	N-methyl sulfonamide variant
+2	CC(C)Cc1ccc(C(C)c2nnn[nH]2)cc1	1.0	0.8778	230.3	2.55	PASS	CLEAN	known	Tetrazole ibuprofen
+2	CC(C(=O)O)c1ccc(CC(C)(F)F)cc1	1.0	0.8594	228.2	3.07	PASS	CLEAN	known	gem-Difluoro ibuprofen
+2	CC(C)Cc1ccc(C(C)C(=O)O)c(F)c1	1.0	0.8522	224.3	3.21	PASS	CLEAN	known	3-Fluoro-ibuprofen
+2	CC(C)Cc1ccc(C(C)C(=O)O)s1	0.9821	0.8321	212.3	3.13	PASS	CLEAN	known	Thiophene scaffold hop
+2	CC(C)Cc1ccnc(C(C)C(=O)O)c1	0.9747	0.8247	207.3	2.47	PASS	CLEAN	known	2-Pyridine ibuprofen
+2	CC(C)Cc1ccc(OC(C)C(=O)O)cc1	0.9828	0.8328	222.3	2.74	PASS	CLEAN	known	Ether-acid variant
+2	CC(C(=O)O)c1ccc(CC2CC2)cc1	0.9684	0.8184	204.3	2.83	PASS	CLEAN	known	Cyclopropyl-methyl variant
+3	CC(C(=O)O)c1ccc(Oc2ccccn2)cc1	1.0	0.8961	243.3	3.06	PASS	CLEAN	known	Pyridyloxy — QED 0.90, top this round
+3	CC(C(=O)O)c1ccc(N(C)S(C)(=O)=O)cc1	1.0	0.8811	257.3	1.27	PASS	CLEAN	known	Sulfonamide variant
+3	CC(C(=O)O)c1ccc(-c2ccccn2)cc1	1.0	0.8766	227.3	2.94	PASS	CLEAN	known	2-Pyridyl biphenyl acid
+3	CC(C(=O)O)c1ccc(OC(F)(F)F)cc1	1.0	0.8741	234.2	2.77	PASS	CLEAN	known	OCF3-phenylpropionic acid
+3	CC(C(=O)O)c1ccc(-n2ccnc2)cc1	1.0	0.8539	216.2	2.06	PASS	CLEAN	known	Imidazolyl phenylpropionic
+3	O=C(O)C1Cc2ccccc2N1C(=O)C(F)F	0.9984	0.8484	241.2	1.29	PASS	CLEAN	known	Difluoroacetyl indoline acid
+4	O=C(O)C1CC(c2ccc(F)cc2)CN1C(=O)c1ccco1	1.0	0.9454	303.3	2.5	PASS	CLEAN	novel	★ Fluorophenyl pyrrolidine furoyl acid — QED 0.95!
+4	CC(C(=O)O)c1ccc(S(=O)(=O)c2ccccn2)cc1	1.0	0.9321	291.3	2.1	PASS	CLEAN	novel	★ Pyridine sulfonyl phenylpropionic acid
+4	CC(C(=O)O)c1cccc(Oc2ncccc2F)c1	1.0	0.9177	261.3	3.2	PASS	CLEAN	novel	★ Fluoropyridyloxy phenylpropionic acid
+4	CC(C(=O)O)c1ccc(OCc2ccc(F)cc2)cc1	1.0	0.9059	274.3	3.59	PASS	CLEAN	novel	★ Fluorobenzyloxy phenylpropionic acid
+4	CC(C(=O)O)c1cc(Cl)c(OCC2CC2)cc1F	1.0	0.8929	272.7	3.46	PASS	CLEAN	novel	★ Cl/F/cyclopropyl phenylpropionic acid
+4	CC(C(=O)O)c1cc(F)cc(-c2ccoc2)c1	1.0	0.8861	234.2	3.27	PASS	CLEAN	novel	★ Furyl-fluoro phenylpropionic acid
+4	CC(C(=O)O)c1ccc2oc(C(F)(F)F)cc2c1	1.0	0.8941	258.2	3.64	PASS	CLEAN	known	CF3-benzofuran propionic acid
+4	O=C(O)c1ccc(NC(=O)c2ccncc2)c(F)c1	1.0	0.8859	260.2	2.17	PASS	CLEAN	known	Isonicotinoyl fluorobenzoic acid
+4	CC(C(=O)O)c1cnc(N2CCOCC2)s1	1.0	0.8616	242.3	1.17	PASS	CLEAN	-	Morpholino thiazole propionic acid
+4	O=C(O)C(c1ccsc1)c1ccco1	0.9928	0.8428	208.2	2.56	PASS	CLEAN	-	Thienyl-furyl acetic acid
+5	O=C(O)C1CC(c2ccc(F)cc2)CN1C(=O)c1cccs1	1.0	0.946	319.4	2.97	PASS	CLEAN	-	Thiophene variant — tied with best
+5	O=C(O)C1CC(c2ccc(F)cc2)CN1C(=O)c1ccncc1	1.0	0.9435	314.3	2.3	PASS	CLEAN	-	Pyridine carbonyl variant
+5	O=C(O)C1CC(c2ccc(F)cc2)CN1c1ccccn1	1.0	0.9422	286.3	2.67	PASS	CLEAN	-	Pyridinyl direct variant
+5	O=C(O)C1CC(c2ccc(F)cc2)CN1C(=O)c1cc(F)co1	1.0	0.9433	321.3	2.64	PASS	CLEAN	-	Fluoro-furoyl variant
+6	O=C(O)C1CC(c2ccc(F)cc2)N(C(=O)c2ccco2)C1	1.0	0.9461	303.3	2.71	PASS	CLEAN	novel	★★ NEW BEST — pyrrolidine N-furoyl isomer, QED 0.9461
+6	O=C(O)C1(c2ccc(F)cc2)CCN(C(=O)c2ccco2)CC1	1.0	0.9446	317.3	2.68	PASS	CLEAN	novel	Piperidine-furoyl variant
+6	O=C(O)C1CCN(C(=O)c2ccc(F)cc2)C(c2ccco2)C1	1.0	0.9441	317.3	3.1	PASS	CLEAN	novel	Piperidine reversed
+6	O=C(O)CN1CCC(c2ccc(F)cc2)(c2ccco2)CC1	1.0	0.9434	303.3	2.89	PASS	CLEAN	novel	Spiro-piperidine glycine
+7	O=C(O)C1CC(=O)N(c2ccc(F)cc2)C1c1ccco1	1.0	0.9424	289.3	2.6	PASS	CLEAN	-	Glutarimide-like — close but no improvement
+7	O=C(O)c1cc(N2CCC(c3ccco3)CC2)ccc1F	1.0	0.9392	289.3	3.5	PASS	CLEAN	-	Piperidine-furyl benzoic acid
+7	O=C(O)C1(c2ccco2)CCN(c2ccc(F)cc2)C1	1.0	0.9353	275.3	2.65	PASS	CLEAN	-	Amino-pyrrolidine spiro
+8	O=C(O)C1CC(c2cccc(F)c2)N(C(=O)c2ccco2)C1	1.0	0.9461	303.3	2.71	PASS	CLEAN	novel	meta-F isomer — ties best
+8	O=C(O)C1CC(c2ccc(F)c(F)c2)N(C(=O)c2ccco2)C1	1.0	0.9435	321.3	2.85	PASS	CLEAN	-	3,4-diF variant
+8	O=C(O)C1CC(c2ccc(F)cc2)N1C(=O)c1ccco1	1.0	0.9418	289.3	2.46	PASS	CLEAN	-	Azetidine variant
+9	CC(C)c1nc(-c2ccc(CC(=O)O)cc2)cs1	1.0	0.9151	261.3	3.56	PASS	CLEAN	-	Thiazole scaffold — different family
+9	O=C(O)c1cc(-c2ccc(N3CCOCC3)cc2)on1	1.0	0.9205	274.3	1.88	PASS	CLEAN	-	Morpholino-isoxazole
+9	O=C(O)c1cccc(NC(=O)c2ccc(N3CCOCC3)cc2)c1	1.0	0.9022	326.4	2.47	PASS	CLEAN	-	Morpholino-benzamide
+10	O=C(O)C1CC(c2ccc(F)cc2)N(C(=O)c2ccoc2)C1	1.0	0.9461	303.3	2.71	PASS	CLEAN	novel	3-furoyl isomer — ties best at 0.9461
+10	Cc1ccc(C2CC(C(=O)O)CN2C(=O)c2ccco2)cc1	1.0	0.9457	299.3	2.88	PASS	CLEAN	-	p-Tolyl variant — close but no cigar
+10	Cc1cc(F)cc(C2CC(C(=O)O)CN2C(=O)c2ccco2)c1	1.0	0.9444	317.3	3.02	PASS	CLEAN	-	3-F-5-Me phenyl variant
+11	O=C(O)C1CN(C(=O)c2ccco2)C(c2ccc(F)cc2)CO1	1.0	0.9368	319.3	2.09	PASS	CLEAN	-	Morpholine-furoyl oxazine — best morpholine
+11	O=C(c1ccco1)N1CC(c2ccc(F)cc2)OCC1CO	1.0	0.9418	305.3	1.99	PASS	CLEAN	-	Hydroxymethyl oxazine — best exp 11
+12	O=C(O)c1ccc(N2CCN(C(=O)c3ccco3)CC2)cc1	1.0	0.9374	300.3	1.94	PASS	CLEAN	-	Furoyl-piperazine benzoic acid
+12	O=C(O)c1cnn(C2CCN(c3ccc(F)cc3)CC2)c1	1.0	0.9431	289.3	2.56	PASS	CLEAN	-	Pyrazole-piperidine — best piperazine exp 12
+13	O=C(O)Cc1cn(C(=O)c2ccco2)c2ccc(F)cc12	0.9535	0.8035	287.2	2.69	PASS	CLEAN	-	N-furoyl indole acetic acid — best indole
+14	O=C(O)Cc1nc2cc(N3CCOCC3)ccc2[nH]1	1.0	0.8623	261.3	1.03	PASS	CLEAN	-	Morpholino-benzimidazole — best benzimidazole
+15	O=C(O)CN1Cc2ccc(F)cc2CC1c1ccco1	1.0	0.9351	275.3	2.6	PASS	CLEAN	-	THIQ-glycine furyl — best THIQ
+16	O=C(O)CN1C(=O)c2cc(F)ccc2OC1c1ccco1	1.0	0.9356	291.2	2.04	PASS	CLEAN	-	Benzoxazinone-furoyl — best chromanone
+17	O=C(O)C1CC(c2ccc(F)cc2)N(C(=O)c2cccs2)C1	1.0	0.9451	319.4	3.18	PASS	CLEAN	-	Thienylcarbonyl pyrrolidine
+17	O=C(O)C1CC(c2ccc(F)cc2)N(C(=O)c2ccncc2)C1	1.0	0.9448	314.3	2.51	PASS	CLEAN	-	Nicotinoyl pyrrolidine
+18	O=C(O)C1CC(c2ccc(F)cc2)N(C(=O)c2ccoc2)C1	1.0	0.9461	303.3	2.71	PASS	CLEAN	-	3-furoyl isomer (ties prev champion)
+19	O=C(O)c1cnc(N2CCC(c3ccc(F)cc3)CC2)s1	1.0	0.9444	306.4	3.36	PASS	CLEAN	-	Thiazole-piperidine acid — best exp 19
+20	O=C(O)C1CC(c2ccc(F)cc2)N(C(=O)c2ccccc2)C1	1.0	0.947	313.3	3.11	PASS	CLEAN	novel	★★ Benzoyl pyrrolidine — QED 0.947, NEW BEST
+20	O=C(O)C1CC(c2ccccc2F)N(C(=O)c2ccco2)C1	1.0	0.9461	303.3	2.71	PASS	CLEAN	-	ortho-F phenyl furoyl isomer
+21	O=C(O)C1CC(c2ccc(F)cc2)CN1C(=O)c1ccccc1	1.0	0.9477	313.3	2.91	PASS	CLEAN	novel	★★ Prolinol-benzoyl — QED 0.9477, NEW BEST
+21	O=C(O)C1CC(c2ccccc2)CN1C(=O)c1ccc(F)cc1	1.0	0.9477	313.3	2.91	PASS	CLEAN	novel	Phenyl + fluorobenzoyl isomer (ties)
+21	O=C(O)C1CC(c2ccc(C)cc2)CN1C(=O)c1ccccc1	1.0	0.9477	309.4	3.08	PASS	CLEAN	novel	Tolyl-benzoyl pyrrolidine (ties)
+22	O=C(O)C1CN(C(=O)c2ccccc2)CC1c1ccc(F)cc1	1.0	0.9477	313.3	2.77	PASS	CLEAN	-	Positional isomer (ties at 0.9477)
+23	O=C(O)C1CC(c2ccccc2)CN1C(=O)c1ccccc1	1.0	0.9469	295.3	2.77	PASS	CLEAN	-	Diphenyl pyrrolidine — no F
+24	O=C(O)C1CC(c2ccc(F)cc2)C(=O)N1c1ccccc1	1.0	0.9478	299.3	2.8	PASS	CLEAN	novel	★★ gamma-Lactam — QED 0.9478, NEW BEST
+24	O=C(O)C1CC(c2ccccc2)C(=O)N1c1ccc(F)cc1	1.0	0.9478	299.3	2.8	PASS	CLEAN	novel	Phenyl + N-fluorophenyl lactam (ties)
+25	O=C(O)C1CC(c2cccc(F)c2)C(=O)N1c1ccccc1	1.0	0.9478	299.3	2.8	PASS	CLEAN	novel	meta-F lactam isomer (ties)
+26	O=C(O)C1(c2ccc(F)cc2)CC(=O)N(c2ccccc2)C1	1.0	0.9474	299.3	2.59	PASS	CLEAN	-	Spiro lactam variant
+27	O=C(O)C1CCC(c2ccc(F)cc2)C(=O)N1c1ccccc1	1.0	0.9465	313.3	3.19	PASS	CLEAN	-	Piperidinone — 6-ring slightly worse
+28	O=C(O)CC(c1ccc(F)cc1)N1Cc2ccccc2C1=O	1.0	0.9439	299.3	3.0	PASS	CLEAN	-	Isoindolinone — best exp 28
+29	O=C(O)C1CC(c2ccsc2)C(=O)N1c1ccc(F)cc1	1.0	0.9484	305.3	2.86	PASS	CLEAN	novel	★★★ THIENYL LACTAM — QED 0.9484, NEW CHAMPION
+29	O=C(O)C1CC(c2ccsc2)C(=O)N1c1cccc(F)c1	1.0	0.9484	305.3	2.86	PASS	CLEAN	novel	meta-F thienyl lactam (ties champion)
+29	O=C(O)C1CC(c2cc(F)cs2)C(=O)N1c1ccccc1	1.0	0.9484	305.3	2.86	PASS	CLEAN	novel	Fluorothienyl phenyl lactam (ties)
+30	O=C(O)C1CC(c2ccsc2)CN1C(=O)c1ccccc1	1.0	0.9481	301.4	2.83	PASS	CLEAN	novel	Thienyl benzoyl pyrrolidine
+30	O=C(O)C1CC(c2ccsc2)C(=O)N1c1ccc(C)cc1	1.0	0.9477	301.4	3.03	PASS	CLEAN	-	Thienyl tolyl lactam
+30	O=C(O)C1CC(c2cccs2)C(=O)N1c1ccc(F)cc1	1.0	0.9484	305.3	2.86	PASS	CLEAN	novel	2-thienyl isomer (ties champion)
