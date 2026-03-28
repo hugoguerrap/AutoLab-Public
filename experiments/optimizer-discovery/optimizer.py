@@ -3,66 +3,52 @@ Optimizer Discovery — Editable Optimizer File
 ===============================================
 
 THIS IS THE ONLY FILE YOU MODIFY during the optimization loop.
-
-Define your CustomOptimizer class here. It must:
-1. Inherit from torch.optim.Optimizer
-2. Accept (params, lr) at minimum
-3. Implement step() with your novel update rule
-
-Baseline: Plain SGD (simplest possible optimizer).
-Your goal: discover an update rule that beats Adam/AdamW.
 """
 
 import torch
 import math
 
-# ── Learning Rate ──────────────────────────────────────────────
-# You can tune this. Default: 0.001
-LEARNING_RATE = 0.001
-
-# ── Custom Optimizer ───────────────────────────────────────────
+LEARNING_RATE = 0.002  # Higher initial LR with warmup + decay
 
 class CustomOptimizer(torch.optim.Optimizer):
     """
-    Baseline: Plain SGD.
+    Experiment 2: Adam + Gradient Centralization + LR Warmup + Cosine Decay.
 
-    The update rule is simple: param = param - lr * gradient
-
-    YOUR MISSION: Replace this with a novel update rule that
-    trains faster and reaches higher accuracy than Adam/AdamW.
-
-    Things you can try:
-    - Add momentum (exponential moving average of gradients)
-    - Add adaptive learning rates (per-parameter, like Adam)
-    - Add second moment tracking (gradient variance)
-    - Add weight decay (L2 regularization)
-    - Add gradient clipping
-    - Add learning rate warmup/scheduling
-    - Combine ideas in novel ways
-    - Invent entirely new update rules
-
-    State variables you can store in self.state[param]:
-    - Momentum buffer
-    - Second moment estimate
-    - Step count
-    - Running statistics
-    - Anything else you need
+    Novel additions over standard Adam:
+    1. Gradient centralization: subtract mean of gradient (for non-bias params)
+    2. Warmup: linearly increase LR for first 100 steps
+    3. Cosine LR decay: smoothly reduce LR over training
     """
 
-    def __init__(self, params, lr=0.001, **kwargs):
-        defaults = dict(lr=lr, **kwargs)
+    def __init__(self, params, lr=0.002, beta1=0.9, beta2=0.999, eps=1e-8,
+                 weight_decay=0.01, warmup_steps=100, total_steps=4700):
+        defaults = dict(lr=lr, beta1=beta1, beta2=beta2, eps=eps,
+                        weight_decay=weight_decay, warmup_steps=warmup_steps,
+                        total_steps=total_steps)
         super().__init__(params, defaults)
+
+    def _get_lr_scale(self, step, warmup_steps, total_steps):
+        """Warmup + cosine decay schedule."""
+        if step < warmup_steps:
+            return step / max(1, warmup_steps)
+        progress = (step - warmup_steps) / max(1, total_steps - warmup_steps)
+        return 0.5 * (1.0 + math.cos(math.pi * progress))
 
     @torch.no_grad()
     def step(self, closure=None):
-        """Perform a single optimization step."""
         loss = None
         if closure is not None:
             with torch.enable_grad():
                 loss = closure()
 
         for group in self.param_groups:
-            lr = group["lr"]
+            base_lr = group["lr"]
+            beta1 = group["beta1"]
+            beta2 = group["beta2"]
+            eps = group["eps"]
+            wd = group["weight_decay"]
+            warmup = group["warmup_steps"]
+            total = group["total_steps"]
 
             for p in group["params"]:
                 if p.grad is None:
@@ -70,36 +56,46 @@ class CustomOptimizer(torch.optim.Optimizer):
 
                 grad = p.grad
 
-                # ═══════════════════════════════════════════
-                # YOUR UPDATE RULE HERE
-                # Currently: plain SGD
-                # Replace this with your novel algorithm
-                # ═══════════════════════════════════════════
-                p.data.add_(grad, alpha=-lr)
+                # Initialize state
+                state = self.state[p]
+                if len(state) == 0:
+                    state["step"] = 0
+                    state["m"] = torch.zeros_like(p.data)
+                    state["v"] = torch.zeros_like(p.data)
+
+                state["step"] += 1
+                t = state["step"]
+                m, v = state["m"], state["v"]
+
+                # Learning rate with warmup + cosine decay
+                lr = base_lr * self._get_lr_scale(t, warmup, total)
+
+                # Gradient centralization: subtract mean for weight matrices
+                if grad.dim() > 1:
+                    grad = grad - grad.mean(dim=tuple(range(1, grad.dim())), keepdim=True)
+
+                # Decoupled weight decay
+                if wd > 0:
+                    p.data.mul_(1 - lr * wd)
+
+                # Update moments
+                m.mul_(beta1).add_(grad, alpha=1 - beta1)
+                v.mul_(beta2).addcmul_(grad, grad, value=1 - beta2)
+
+                # Bias correction
+                m_hat = m / (1 - beta1 ** t)
+                v_hat = v / (1 - beta2 ** t)
+
+                # Update parameters
+                p.data.addcdiv_(m_hat, v_hat.sqrt().add_(eps), value=-lr)
 
         return loss
 
-
-# ── Strategy Notes ─────────────────────────────────────────────
 STRATEGY_NOTES = """
-Experiment 0 — Baseline: Plain SGD
-
-Known optimizers to study and beat:
-1. SGD + Momentum: v = beta*v + grad, param -= lr*v
-2. Adam: m = beta1*m + (1-beta1)*g, v = beta2*v + (1-beta2)*g^2,
-         param -= lr * m_hat / (sqrt(v_hat) + eps)
-3. AdamW: Adam + decoupled weight decay
-4. RMSprop: v = alpha*v + (1-alpha)*g^2, param -= lr*g/sqrt(v+eps)
-5. Adagrad: accumulate g^2, param -= lr*g/sqrt(acc+eps)
-
-Novel ideas to explore:
-- Combine momentum + adaptive LR in new ways
-- Use gradient sign (like SignSGD) with magnitude tracking
-- Hyperbolic or sigmoid-based learning rate adaptation
-- Gradient history compression (beyond simple EMA)
-- Per-parameter learning rate based on gradient statistics
-- Curvature estimation without full Hessian
-- Novel bias correction schemes
-- Gradient centralization
-- Lookahead-style dual update
+Exp 1: Adam reimplementation = 0.9217 (stability gap vs AdamW 0.9640)
+Exp 2: Added gradient centralization + warmup + cosine decay.
+  - GC: removes gradient mean for weight matrices (Wang et al. 2020)
+  - Warmup: prevents early overshoot
+  - Cosine: smooth LR reduction for better convergence
+  - Higher initial LR (0.002) to compensate for decay
 """

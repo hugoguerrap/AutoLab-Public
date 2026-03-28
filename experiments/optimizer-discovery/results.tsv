@@ -1,1 +1,4 @@
 experiment	composite_score	val_acc	val_loss	convergence_epoch	stability	accuracy_score	loss_score	convergence_score	stability_score	lr	description
+0	0.0448	0.878	0.4764	10	0.0435	0.0	0.0	0.1	0.1323	0.001	Plain SGD baseline
+1	0.9217	0.9794	0.0806	1	0.0083	0.9341	0.8689	1.0	0.8504	0.001	Adam reimplementation
+2	0.9865	0.9861	0.0546	1	0.0016	1.0	0.9529	1.0	0.9882	0.002	Adam+GC+warmup+cosine — BEATS AdamW!
