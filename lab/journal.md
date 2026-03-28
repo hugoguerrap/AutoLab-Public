@@ -86,3 +86,12 @@ Format: `[YYYY-MM-DD HH:MM:SS] ACTION | project | details`
 [2026-03-27 15:32:00] PLATEAU | nootropic-discovery | exp 11-12: no improvement, at theoretical QED ceiling
 [2026-03-27 15:33:00] COMPLETE | nootropic-discovery | 12 experiments, 55 molecules, champion 0.9864, +21% over Modafinil, NOVEL
 [2026-03-28 02:39:28] SESSION_START
+[2026-03-28 03:00:00] RUN_START | surfactant-design | Novel biodegradable detergent molecules
+[2026-03-28 03:05:00] ITERATE | surfactant-design | exp 1: baseline survey — 10 scaffolds, sugar esters best at 0.9381
+[2026-03-28 03:10:00] ITERATE | surfactant-design | exp 2: ester + hydroxyl — lauroyl bis-glycerol 0.9600, biodeg 0.76
+[2026-03-28 03:12:00] ITERATE | surfactant-design | exp 3: tail length + dual ester — no improvement, dual ester hurts HLB
+[2026-03-28 03:15:00] ITERATE | surfactant-design | exp 4: quaternary C triol head BREAKTHROUGH — 0.9698, SA 0.975
+[2026-03-28 03:18:00] ITERATE | surfactant-design | exp 5: fine-tuning C13/C14 tails — no improvement over 0.9698
+[2026-03-28 03:20:00] ITERATE | surfactant-design | exp 6: unsaturated tail — double bond lowers LogP, 0.9723 NEW BEST
+[2026-03-28 03:25:00] DISCOVERY | surfactant-design | CID=0 from PubChem — ALL 5 top candidates are NOVEL
+[2026-03-28 03:25:30] COMPLETE | surfactant-design | 6 experiments, ~40 molecules, champion 0.9723, +8.9% over Lauryl Glucoside, NOVEL
