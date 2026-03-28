@@ -30,3 +30,10 @@ experiment	smiles	composite_score	amphiphilicity	hlb	hlb_score	cmc_score	biodegr
 4	CCCCCCCCCCCC(=O)OCC(CO)C(O)CO	0.9505	1.0	12.96	1.0	0.906	0.74	0.744	0.85	318.45	2.41	-	Lauroyl pentanetetrol (linear)
 4	CCCCCCCCCCCC(=O)OC(CO)(C(O)CO)CO	0.9690	1.0	15.42	0.99	0.906	0.78	0.811	0.875	334.45	1.53	-	Lauroyl branched pentaerythritol
 4	CCCCCCCCCCCC(=O)OC(C(O)CO)(CO)CO	0.9690	1.0	15.42	0.99	0.906	0.78	0.811	0.875	334.45	1.53	-	Lauroyl bis-glycerol (quat C)
+5	CCCCCCCCCCCCC(=O)OCC(O)(CO)CO	0.9671	1.0	12.96	1.0	0.934	0.76	0.733	0.95	318.45	2.56	-	C13 TrisHM — better CMC but lower aquatic
+5	CCCCCCCCCCCCCC(=O)OCC(O)(CO)CO	0.9600	1.0	12.37	0.978	0.962	0.76	0.704	0.925	332.48	2.95	-	C14 TrisHM — best CMC but lower scores
+6	CCCCCCCCCC=CC(=O)OCC(O)(CO)CO	0.9723	1.0	13.68	1.0	0.906	0.76	0.779	0.975	302.41	1.94	-	Undecenoyl TrisHM — NEW BEST!
+6	CCCCCCC=CCCCC(=O)OCC(O)(CO)CO	0.9723	1.0	13.68	1.0	0.906	0.76	0.779	0.975	302.41	1.94	-	7-Dodecenoyl TrisHM (mid double bond)
+6	CCCCCC=CCCCCC(=O)OCC(O)(CO)CO	0.9723	1.0	13.68	1.0	0.906	0.76	0.779	0.975	302.41	1.94	-	6-Dodecenoyl TrisHM
+6	CCCCCCCCCC=CC(=O)OC(CO)(CO)CO	0.9723	1.0	13.68	1.0	0.906	0.76	0.779	0.975	302.41	1.94	-	Undecenoyl Pentaerythritol
+6	CCCCCCOCCCCCC(=O)OCC(O)(CO)CO	0.7331	0.5	14.47	1.0	0.514	0.69	0.82	0.95	320.43	1.4	-	Ether-chain TrisHM — chain too short
