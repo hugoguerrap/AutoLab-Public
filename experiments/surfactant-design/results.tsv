@@ -1,1 +1,12 @@
 experiment	smiles	composite_score	amphiphilicity	hlb	hlb_score	cmc_score	biodegradability	aquatic_safety	sa_score	mw	logp	novel	description
+1	CCCCCCCCCCCCOC1OC(CO)C(O)C(O)C1O	0.8923	1.0	13.68	1.0	0.906	0.66	0.796	0.65	348.48	1.72	-	Lauryl Glucoside baseline
+1	CCCCCCCCCCOC1OC(CO)C(O)C(O)C1O	0.7376	1.0	14.99	1.0	0.8	0.66	1.0	0.7	320.43	0.94	-	C10 Glucoside — LogP too low
+1	CCCCCCCCCCCCCCOC1OC(CO)C(O)C(O)C1O	0.8848	1.0	12.57	0.99	0.962	0.66	0.737	0.6	376.53	2.5	-	C14 Glucoside
+1	CCCCCCCCCCCC(=O)NCC(=O)[O-].[Na+]	0.9012	0.9	12.57	0.99	0.936	0.62	0.792	1.0	256.37	1.77	-	Lauroyl Glycinate — new best!
+1	CCCCCCCCCCCC(=O)NC(C)C(=O)[O-].[Na+]	0.8764	0.9	11.88	0.933	0.936	0.6	0.763	0.95	270.39	2.16	-	Lauroyl Alaninate
+1	CCCCCCCCCCCC(=O)NC(CCC(=O)[O-])C(=O)[O-].[Na+].[Na+]	0.7295	0.9	15.83	0.963	0.906	0.58	1.0	0.875	327.42	0.67	-	Lauroyl Glutamate — LogP too low
+1	CCCCCCCCCCCC(=O)OCC(O)CO	0.9313	1.0	11.44	0.874	0.936	0.72	0.715	0.95	274.4	2.8	-	Glycerol Monolaurate — ester boost!
+1	CCCCCCCCCCCC(=O)OC1C(O)C(O)C(CO)OC1CO	0.9381	1.0	14.94	1.0	0.906	0.74	0.828	0.6	376.49	1.29	-	Lauroyl Glucose Ester — BEST!
+1	CC1OC(OC(CC(=O)O)CCCCCCCCCC)C(O)C(O)C1O	0.8811	1.0	14.94	1.0	0.934	0.66	0.76	0.55	376.49	2.2	-	Rhamnolipid-inspired
+1	CCCCCCCCCCCC(=O)OC1C(O)C(O)C(O)C(CO)O1	0.9374	1.0	15.58	0.982	0.906	0.74	0.831	0.625	362.46	1.25	-	Lauroyl Glucoside (ester link)
+1	CCCCCCCCCCCCOC(=O)C(O)CO	0.9313	1.0	11.44	0.874	0.936	0.72	0.715	0.95	274.4	2.8	-	Lauryl Glycerate (reverse ester)
