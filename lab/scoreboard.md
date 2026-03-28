@@ -14,3 +14,4 @@ Best results per experiment. Updated after each successful run.
 | prompt-optimizer | 0.8049 pass@1 | 0 | Baseline prompt, ready to optimize | 2026-03-25 |
 | nootropic-discovery | 0.9864 | 12 (55 molecules) | Novel triple-pharm CNS penetrant, +21% over Modafinil | 2026-03-27 |
 | surfactant-design | 0.9723 | 6 (~40 molecules) | Novel biodegradable detergent, +8.9% over Lauryl Glucoside | 2026-03-28 |
+| optimizer-discovery | 0.9909 | 10 | Novel "DMGCN" optimizer, +2.8% over AdamW on MNIST | 2026-03-28 |

@@ -8,3 +8,6 @@ experiment	composite_score	val_acc	val_loss	convergence_epoch	stability	accuracy
 6	0.9813	0.984	0.0564	1	0.0015	0.9882	0.9472	1.0	0.9904	0.002	Progressive WD — didn't help
 7	0.9856	0.9848	0.0568	1	0.001	0.9976	0.9458	1.0	1.0	0.002	Single momentum+clip — close but not better
 8	0.9909	0.9855	0.0513	1	0.0004	1.0	0.9635	1.0	1.0	0.002	Gradient noise injection — NEW BEST!
+9a	0.9891	0.9849	0.053	1	0.0004	0.9988	0.958	1.0	1.0	0.002	noise_scale=0.02 — too much noise
+9b	0.9904	0.9855	0.0519	1	0.0006	1.0	0.9616	1.0	1.0	0.002	noise_scale=0.005 — too little noise
+10	0.9868	0.9846	0.0543	1	0.0003	0.9953	0.9538	1.0	1.0	0.002	blend=0.6, wd=0.015 — worse

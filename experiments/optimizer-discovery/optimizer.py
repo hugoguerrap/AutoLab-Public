@@ -106,11 +106,27 @@ class CustomOptimizer(torch.optim.Optimizer):
         return loss
 
 STRATEGY_NOTES = """
-Exp 1: Adam = 0.9217
-Exp 2: Adam+GC+warmup+cosine = 0.9865
-Exp 3: Dual momentum+GC+clip = 0.9877 (CHAMPION)
-Exp 4-7: Various tweaks, none beat 0.9877
-Exp 8: Gradient noise injection — noise_std = 0.01/sqrt(t)
-  - Regularization via noise should close overfitting gap
-  - Train/val gap: 0.01 vs 0.055 → noise may help flatten loss surface
+Exp 1: Adam reimplementation = 0.9217
+Exp 2: Adam+GC+warmup+cosine = 0.9865 (beats AdamW!)
+Exp 3: Dual momentum+GC+clip = 0.9877
+Exp 4: Higher LR = 0.9704 (worse)
+Exp 5: AMSGrad = 0.9806 (too conservative)
+Exp 6: Progressive WD = 0.9813 (didn't help)
+Exp 7: Single momentum+clip = 0.9856 (close)
+Exp 8: Gradient noise injection = 0.9909 ★ CHAMPION ★
+Exp 9: noise_scale tuning (0.005=0.9904, 0.02=0.9891) → 0.01 is optimal
+Exp 10: blend=0.6, wd=0.015 = 0.9868 (worse)
+
+NOVEL OPTIMIZER: "DualMomentum-GC-Noise" (DMGCN)
+- Dual timescale momentum (fast β1=0.9, slow β3=0.99, blend 70/30)
+- Gradient centralization on weight matrices
+- Gradient clipping (max_norm=1.0)
+- Cosine LR decay with linear warmup
+- Decaying gradient noise injection (0.01/√t)
+- Decoupled weight decay (0.01)
+
+Score: 0.9909 = +2.8% over AdamW (0.9640)
+Val accuracy: 0.9855 (vs AdamW 0.9824)
+Val loss: 0.0513 (vs AdamW 0.0674)
+Stability: 0.0004 (vs AdamW 0.0021)
 """

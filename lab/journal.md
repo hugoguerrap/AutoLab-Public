@@ -95,3 +95,11 @@ Format: `[YYYY-MM-DD HH:MM:SS] ACTION | project | details`
 [2026-03-28 03:20:00] ITERATE | surfactant-design | exp 6: unsaturated tail — double bond lowers LogP, 0.9723 NEW BEST
 [2026-03-28 03:25:00] DISCOVERY | surfactant-design | CID=0 from PubChem — ALL 5 top candidates are NOVEL
 [2026-03-28 03:25:30] COMPLETE | surfactant-design | 6 experiments, ~40 molecules, champion 0.9723, +8.9% over Lauryl Glucoside, NOVEL
+[2026-03-28 04:00:00] RUN_START | optimizer-discovery | Novel optimization algorithms to beat Adam/AdamW
+[2026-03-28 04:05:00] ITERATE | optimizer-discovery | baselines: SGD=0.0448, Adam=0.9428, AdamW=0.9640
+[2026-03-28 04:10:00] ITERATE | optimizer-discovery | exp 2: Adam+GC+warmup+cosine = 0.9865, BEATS AdamW
+[2026-03-28 04:15:00] ITERATE | optimizer-discovery | exp 3: dual momentum+clip = 0.9877, perfect stability
+[2026-03-28 04:25:00] ITERATE | optimizer-discovery | exp 4-7: various tweaks, none beat 0.9877
+[2026-03-28 04:30:00] ITERATE | optimizer-discovery | exp 8: gradient noise injection BREAKTHROUGH — 0.9909
+[2026-03-28 04:35:00] PLATEAU | optimizer-discovery | exp 9-10: noise tuning, no improvement over 0.9909
+[2026-03-28 04:40:00] COMPLETE | optimizer-discovery | 10 experiments, champion "DMGCN" 0.9909, +2.8% over AdamW
